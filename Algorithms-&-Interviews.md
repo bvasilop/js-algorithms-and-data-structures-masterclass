@@ -23,7 +23,7 @@
   "should it be an integer, float ?"
 4. Can the outputs be determined from the inputs? In other words, do I have enough information to solve the problem? (You may not be able to answer this question until you set about solving the problem. That's ok; it's still worth considering the question at this early stage.)
   ### Ask interviewer if info is not provided
-5. How should i label the important pieces of data that are a part of the problem?
+5. How should I label the important pieces of data that are a part of the problem?
 
 ### Explore Concrete Examples
 ### Break It Down
