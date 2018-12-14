@@ -71,7 +71,7 @@
 * Explicitly writing out the steps that you need to take.
 * This forces you to think about your code before you actually write it so that you're not just Freewheelin' and trying to come up with it on the fly.
 
-      function charCount(str) {  "Your PIN number is 1234"
+      function charCount(str) {
         // do something
         // return an object with keys that are alpha numeric characters in a string;
         // values should be the counts for those characters
@@ -105,7 +105,130 @@
   3. Write a simplified solution
   4. Then incorporate that difficulty back i
 
+## Look Back and Refactor
 
+
+### Refactoring Questions
+* Can you check the result?
+* Can you derive the result differently?
+* Can you understand it at a glance? Is it intuitive ?
+* Can you use the result or method for some other problem?
+* Are there similarities with other examples.
+* Can you improve the performance of your solution.
+* Can you think of other ways to Refactor
+* How have other people solved this problem
+* What other approaches have you seen (ask interviewer)
+
+
+## Simplified solution
+    function charCount(str) {
+      var obj = {};
+        for(var i = 0; i < str.length; i++) {
+        var char = str[i].toLowerCase();
+        if(/[a-z0-9]/.test(char)) { // regex to test alphanumeric a-z 0-9
+        if (obj[char] > 0) { // char is either number or letter
+        obj[char]++; // if > 0 then add  to the value
+        } else {
+        obj[char] = 1; // otherwise initialize to 1
+        }
+      }
+    }
+      return obj;
+    }
+    charCount('Hello 420')
+
+### Further Refactor
+    function charCount(str) {
+      var obj = {};
+        for(var char of str) { // use for of instead of for loop because if we use for of in a string it gives us each character immediately
+        char = char.toLowerCase();
+        if (/[a-z0-9]/.test(char)) { // regex to test alphanumeric a-z 0-9
+        if (obj[char] > 0) { // char is either number or letter
+            obj[char]++;  // if > 0 then add  to the value
+      } else {
+          obj[char] = 1; // otherwise initialize to 1
+        }
+      }
+    }
+    return obj;
+    }
+    charCount('Hello 420')
+
+### Further Refactor
+    function charCount(str) {
+      var obj = {};
+        for(var char of str) {
+          char = char.toLowerCase();
+          if (/[a-z0-9]/.test(char)) { // question whether using a regex is the most efficient way. Browser issues? Speed?
+          obj[char] = ++obj[char] || 1; // takes a char a, accesses a corresponding value in our object.
+          // if it's (if there's a value in there already, we're going to add one to it.
+          // if there's nothing in there, we're going to set it to one (|| or set to 1)
+          }
+        }
+    return obj;
+    }
+    charCount('Hello 420')
+
+### Refactor Again
+    function charCount(str) {
+      var obj = {};
+        for(var char of str) {
+          char = char.toLowerCase();
+          if (/[a-z0-9]/.test(char)) { // question whether using a regex is the most efficient way. Browser issues? Speed?
+          obj[char] = ++obj[char] || 1; // takes a char a, accesses a corresponding value in our object.
+          // if it's (if there's a value in there already, we're going to add one to it.
+          // if there's nothing in there, we're going to set it to one (|| or set to 1)
+          }
+        }
+      return obj;
+    }
+
+### Refactor Again
+#### More efficient solution
+
+    function charCount(str) {
+      var obj = {};
+        for (var char of str) {
+        if (isAlphaNumeric(char)) { // question whether using a regex is the most efficient way. Browser issues? Speed?
+          char = char.toLowerCase(); // question where the best placement for the toLowerCase method should be. // helps with readability nesting in . for statement
+          obj[char] = ++obj[char] || 1;  // then add char to our obj or init to 1 (current value)
+          // takes a char a, accesses a corresponding value in our object.
+          // if it's (if there's a value in there already, we're going to add one to it.
+          // if there's nothing in there, we're going to set it to one (|| or set to 1)
+          }
+        }
+      return obj;
+    }
+    function isAlphaNumeric(char) {
+    var code = char.charCodeAt(0); // gives us first character which is only character. Should return true for each time
+      if (!(code > 47 && code < 58) && // numeric (0-9)
+          !(code > 64 && code < 91) && // upper alpha (A-Z)
+          !(code > 96 && code < 123)) { // lower alpha (a-z)
+        return false;
+        }
+        return true;
+    }
+    charCount('Hello');
+
+## Recap
+* Understand the Problem (Ask clarifying questions)
+* Explore Concrete Examples
+* Understanding the inputs
+* Understanding the outputs
+* Understanding edge cases
+* How do you handle errors?
+* What happens when a user enters something invalid?
+
+## Break it Down
+* Layout a gameplan
+* Writing pseudocode can buy you time and fill in gaps in case you don't solve solution 100%. Here's the steps I was going to do...
+#### Solve/Simplify
+* If you can't solve asked question, solve an older similar one and go apply to new question
+* Look back and Refactor
+* Look at your solutions.
+* How could I improve?
+* Look at other solutions.
+* How can I implement?
 
 
 
