@@ -23,7 +23,7 @@
         if(correctIndex === -1) { // if correct index is -1 (not in there, return false and we're done)
           return false;
         }
-      arr2.splice(correctIndex,1) // it removes 1 from the second array and returns true
+      arr2.splice(correctIndex, 1) // it removes 1 from the second array and returns true
       }
         return true;
     }
