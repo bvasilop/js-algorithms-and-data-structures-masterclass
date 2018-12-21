@@ -1,13 +1,14 @@
 # Anagrams
-
+---
 ### *Given two strings, write a function to determine if the second string is an anagram of the first. An anagram is a word, phrase, or name formed by rearranging the letters of another, such as cinema formed from iceman.*
 
-
+---
 
     function validAnagram(first, second) { // takes two args
       if(first.length !== second.length) { // if lengths don't match then return false
     return false;
     }
+
     const lookup = {}; // create empty obj to that is break down of first string. If letter is found, it is added to object
 
     for (let i = 0; i < first.length; i++) { // loop through first string
