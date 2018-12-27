@@ -1,7 +1,11 @@
 # Count Unique Variables Algorithm
-### *Implement a function called countUniqueVlaues, which accepts a sorted array, and counts the unique values rray. There can be negative numbers in the array, but it will always be sorted.*
+
+### *Implement a function called countUniqueValues, which accepts a sorted array, and counts the unique values array. There can be negative numbers in the array, but it will always be sorted.*
+
 ---
+
 ### Time Complexity - O(n)
+
 ### Space Complexity - O(n)
 
 #### Bonus if can do O(1) Space and O(n) Time
