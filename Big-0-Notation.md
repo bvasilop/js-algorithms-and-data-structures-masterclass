@@ -33,12 +33,14 @@
           log === log₂
 
 ### Rule of thumb
+
 * The logarithm of a number roughly measures the number of times you can divide that number by 2 before you get a value that's less than or equal to one.
 
 * Logarithmic time complexity is great !!! O(log 𝚗)l
 
-### Best to worst.
- #### *O(1) => O(log 𝚗) => O(n) => O(nlog 𝚗) => O(n²)*
+### Best to worst
+
+#### *O(1) => O(log 𝚗) => O(n) => O(nlog 𝚗) => O(n²)*
 
 * Certain search algorithms have logarithmic time complexity
 * Efficient sorting algorithms involve logarithms
@@ -82,5 +84,42 @@
       double([2, 4]);  => [ 4, 8 ]
 
 * As the array length grows in proportion to the length of the input, the space is directly proportional to the (n) input O(n) Space
+
+## Big O(n^2) -- Quadratic Time
+
+![Alt text](./Big-O(n^2).png?raw=true "Title")
+
+* Nested loops
+
+### *Log all pairs of an array*
+
+    const boxes = [1 ,2, 3, 4, 5];
+
+
+    function allPairsOfArray(array) {
+      for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array.length; j++) {
+        console.log(array[i], array[j]);
+        }
+      }
+    }
+
+    allPairsOfArray(boxes);
+
+---
+
+    const arrayOfLetters = ['a', 'b', 'c',  'd', 'e'];
+
+    function logAllPairs(array) {
+      for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array.length; j++) {
+          console.log(array[i], array[j]);
+        }
+      }
+    }
+
+    logAllPairs(arrayOfLetters);
+
+    // Becomes O(n * n) === O(n^2)
 
 ![Alt text](./BigO-cheat-sheet-1.png?raw=true "Title")
