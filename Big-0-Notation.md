@@ -2,6 +2,10 @@
 
 ![Alt text](./Big-O-Chart.png?raw=true "Title")
 
+![Alt text](./Big-O(n).png?raw=true "Title")
+
+![Alt text](./Big-O(1).png?raw=true "Title")
+
 ## Determining which is the best method for implementation
 
 * Using Big O notation, we can have a numeric representation of the performance of code.
