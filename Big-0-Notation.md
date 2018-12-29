@@ -3,6 +3,7 @@
 ![Alt text](./Big-O-Chart.png?raw=true "Title")
 
 ## Determining which is the best method for implementation
+
 * Using Big O notation, we can have a numeric representation of the performance of code.
 * Allows us to talk about how the runtime of an algorithm grows as the inputs grow.
 * More Content
@@ -77,3 +78,5 @@
       double([2, 4]);  => [ 4, 8 ]
 
 * As the array length grows in proportion to the length of the input, the space is directly proportional to the (n) input O(n) Space
+
+![Alt text](./BigO-cheat-sheet-1.png?raw=true "Title")
