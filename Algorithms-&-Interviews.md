@@ -220,7 +220,7 @@
 * What happens when a user enters something invalid?
 
 ## Break it Down
-* Layout a gameplan
+* Layout a game plan
 * Writing pseudocode can buy you time and fill in gaps in case you don't solve solution 100%. Here's the steps I was going to do...
 #### Solve/Simplify
 * If you can't solve asked question, solve an older similar one and go apply to new question
