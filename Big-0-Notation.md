@@ -122,4 +122,28 @@
 
     // Becomes O(n * n) === O(n^2)
 
+---
+### O(n * n) === O(n^2)
+
+### *Different terms for different inputs*
+
+    function compressBoxesTwice(boxes, boxes2) {
+      boxes.forEach(function(boxes) {
+        console.log(boxes);
+      });
+
+      boxes2.forEach(function(boxes) {
+      console.log(boxes);
+      });
+    }
+
+### O(a + b) any step that happens in the same indentation
+
+### O(a * b) if they were indented or loops that  are nested
+
+### Drop non dominant terms
+
+* In the case of O(n^2 + 3n + n/2) n^2 is the dominant term so we drop the rest and keep 0(n^2) because of scalability.
+* If n = 5, (5 * 5) is more dominant than (3 * 5) or (5 / 2). That's why we drop the rest and keep the most dominant
+
 ![Alt text](./BigO-cheat-sheet-1.png?raw=true "Title")
