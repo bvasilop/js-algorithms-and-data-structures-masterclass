@@ -54,6 +54,18 @@
 
 ## Space Complexity
 
+### When a program executes, it has two ways to remember things
+
+* Heap - where we store variables that we assign
+* Stack - where we keep track of our function calls
+  1) Stack overflow is an issue that occurs when dealing with memory
+  2) What affects Space Complexity? (Variables, Data Structures Function Calls and Allocations)
+---
+
+* We look at the total size relative to the size of the input and see how much memory we are allocating (variables).
+
+---
+
 * As (n) grows if we're approaching infinity, the size of the input itself which is (n) is going to grow.
 
 * Auxiliary space complexity refers to space required by the algorithm, not including space taken up by the inputs
@@ -158,3 +170,13 @@
 ### *Example of O(n!)*
 
 #### https://stackoverflow.com/questions/3953244/example-of-on
+
+## Three Pillars of Good Code
+
+* Readability
+* Speed (Time Complexity)
+  1) Efficient
+  2) Scales well
+* Memory (Space Complexity)
+  1) Usually a trade off. Speed usually uses more memory
+  2) Less memory usually results in slower speed

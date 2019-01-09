@@ -230,7 +230,15 @@
 * Look at other solutions.
 * How can I implement?
 
+## Three Pillars of Good Code
 
+* Readability
+* Speed (Time Complexity)
+  1) Efficient
+  2) Scales well
+* Memory (Space Complexity)
+  1) Usually a trade off. Speed usually uses more memory
+  2) Less memory usually results in slower speed
 
 
 
