@@ -145,5 +145,16 @@
 
 * In the case of O(n^2 + 3n + n/2) n^2 is the dominant term so we drop the rest and keep 0(n^2) because of scalability.
 * If n = 5, (5 * 5) is more dominant than (3 * 5) or (5 / 2). That's why we drop the rest and keep the most dominant
-
+---
 ![Alt text](./BigO-cheat-sheet-1.png?raw=true "Title")
+---
+
+## O(n!) Factorial Time
+
+* Rarely encountered
+* The worst in terms of scalability of all Big O notation with the most expensive and steepest Time and Space complexity values
+* Usually occurs we we use a nested loop for every single input (element) that we have
+
+### *Example of O(n!)*
+
+#### https://stackoverflow.com/questions/3953244/example-of-on
