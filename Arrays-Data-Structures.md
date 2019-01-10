@@ -30,3 +30,24 @@
 
       strings.splice(2, 0, 'alien'); // O(n) // 2 is index starting position // 0 is delete count (how many items do we want to delete) // In this case we don't want to delete, we just want to add // 'alien' is item we want to add
       console.log(strings); // [ 'x', 'a', 'alien', 'b', 'c', 'd' ]
+
+## Static and Dynamic Arrays
+
+### Static Arrays
+
+* Static arrays are fixed in size
+
+### Dynamic arrays
+
+* Allow us to copy and rebuild an array at a new location which with more memory.
+* Dynamic array expands as you add more elements.
+* If you have an array of 7 items and want to add to an 8th item to an existing array. * Dynamic arrays allocate 14 blocks of memory and paste this list plus the eighth item into that new location.
+* Prograaming languages like JavaScript, Java and Python automatically allocate memory in this way like dynamic arrays (automatic resizing).
+* Low level languages like C++ allow ways of managing memory (allow for tweaking to run faster) while higher level languages like JavaScript manage the memory allocation for you.
+
+  * lookup O(1)
+  * append* O(1) // similar to push command
+  * insert O(n)
+  * delete O(n)
+
+   *can be O(n) because it loops, then copies the array and moves it to a new location. Doubles the amount of space allocation.
