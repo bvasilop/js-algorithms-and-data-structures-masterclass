@@ -28,9 +28,9 @@
         }
 
         while (array1Item || array2Item) { // loop through while the items conditions are met
-        console.log(array1Item, array2Item);
+        // console.log(array1Item, array2Item);
 
-        if (!array2Item || array1Item < array2Item) { // if no array2 item
+        if (!array2Item === undefined || array1Item < array2Item) { // if no array2 item
 
         mergedArray.push(array1Item); // pushes 0 item in array
         array1Item = array1[i];

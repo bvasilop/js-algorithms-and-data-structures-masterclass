@@ -1,7 +1,6 @@
 # Two Arrays Common Items Algorithm
 
-### *Given two arrays, create a function that let's users know (true/false) whether the two arrays contain common items.*
-
+## *Given two arrays, create a function that let's users know (true/false) whether the two arrays contain common items.*
 
 **Ex.**
 
@@ -18,15 +17,16 @@
     // return true or false
 
 ### Questions to ask interviewer
-  #### 1. How large is this array going to get?
+
+#### 1. How large is this array going to get?
+
    *If interviewer says array is never going to be larger than 5 items, then we don't need to worry about Big O space or time complexity
     If inputs are going to be larger, ask interviewer if they are looking for efficiency or saving memory*
 
-  #### Start solving with naive/brute force(easy) approach. Talk about it before coding.
+#### Start solving with naive/brute force(easy) approach. Talk about it before coding
 
   *In this case talk about nested loop by comparing 'a' with 'z' ... two for loops nested on top of each other. O(n^2). Prob not best solution. Just a way to let the interiewer know that this works but not the most efficient.
     talk about why it's not the best solution*
-
 
     const array1 = ['a', 'b', 'c', 'x'];
     const array2 = ['z', 'y', 'x',];
@@ -57,7 +57,8 @@
       x: true
     }
 
-#### We can now use the obj to compare with array2 and see if a property exists. Therefore eliminating the need for a second or nested loop.
+#### We can now use the obj to compare with array2 and see if a property exists. Therefore eliminating the need for a second or nested loop
+
     array2[index] === obj.properties
       // common solution when trying to improve time complexity
 
@@ -89,11 +90,12 @@
     // Space Complexity O(n) -- creating a new object, and storing props
 
 ### Once completed, think of ways that code can break
-   * Can we assume always 2 parameters?
-      1. containsCommonItem2(array1, null) breaks the code
 
-   * Consider using if statement as checks for testing
-     1. Problem with this solution is since we're using an object with added props, only numbers, strings and booleans can be used correctly
+* Can we assume always 2 parameters?
+    1. containsCommonItem2(array1, null) breaks the code
+
+* Consider using if statement as checks for testing
+    1. Problem with this solution is since we're using an object with added props, only numbers, strings and booleans can be used correctly
 
 ### Cleaner approach using built in Array helper methods
 

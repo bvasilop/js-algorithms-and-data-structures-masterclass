@@ -1,18 +1,19 @@
 # Frequency Counter Algorithm
- * This pattern uses objects or sets to collect values / frequencies of values
- * This can often avoid the need for nested loops or O(N^2) (O of N squared quadratic time --not so good -- because of the nested loops used) operations with arrays / strings
 
-### *Write a function called same, which accepts two arrays. The function should return true if every value in the array has it's corresponding value squared in the second array. The frequency of the values must be the same.*
+* This pattern uses objects or sets to collect values / frequencies of values
+* This can often avoid the need for nested loops or O(N^2) (O of N squared quadratic time --not so good -- because of the nested loops used) operations with arrays / strings
 
-**Example**
+**Write a function called same, which accepts two arrays. The function should return true if every value in the array has it's corresponding value squared in the second array. The frequency of the values must be the same.**
+
+## Example
 
     same([1,2,3], [4, 1, 9]) // true
     same([1,2,3], [1, 9]) // false
     same([1,2,1], [4, 4, 1]) // false (must be the same frequency)( 4 in here once and 1 in here twice)
 
-
 ## Simple Solution
-**Example**
+
+### Example
 
     function same(arr1, arr2) {
       if(arr1.length !== arr2.length) {
@@ -35,7 +36,8 @@
 
 
 ## Refactored Solution
-**Example**
+
+### Example
 
     function same(arr1, arr2) {
       if (arr1.length !== arr2.length) {
@@ -79,6 +81,7 @@
     // it also quick to access data in an object!!
 
 ## Key Takeaways
+
 * Use on object.
 * Use the object as a way to break down the contents of an array or string. Then then you're able to quickly compare that breakdown to how another object looks.
 * So we had two arrays. We break them down into objects that sort of classify what's in those arrays and then we can compare those objects and this allows us to improve our code significantly.

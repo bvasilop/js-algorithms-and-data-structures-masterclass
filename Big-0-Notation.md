@@ -13,13 +13,15 @@
 * More Content
 
 ## Objects and Arrays => Big O
+
 * Objects are fast at pretty much everything but there's no order to them .
 * Arrays are great when you need an order but still be mindful that it's better if you can do it to add and remove from the end and avoid adding and removing from the beginning because that starts a cascade effect. Hence the term shift and unshift and everything else to be indexed.
-*  The same goes to adding and removing from the middle. You can to start another cascade and things can get very indexed after whatever you added or removed.
+* The same goes to adding and removing from the middle. You can to start another cascade and things can get very indexed after whatever you added or removed.
 
 ![Alt text](./big-o-array-operations.png?raw=true "Title")
 
 ## Time Complexity
+
 * Most common complexities: O(1), O(n), O(n²)
 * Sometimes Big O expressions involve more complex mathematical expressions
 * One that might appear often is the logarithm
@@ -59,7 +61,9 @@
 * Heap - where we store variables that we assign
 * Stack - where we keep track of our function calls
   1) Stack overflow is an issue that occurs when dealing with memory
+
   2) What affects Space Complexity? (Variables, Data Structures Function Calls and Allocations)
+
 ---
 
 * We look at the total size relative to the size of the input and see how much memory we are allocating (variables).
@@ -135,6 +139,7 @@
     // Becomes O(n * n) === O(n^2)
 
 ---
+
 ### O(n * n) === O(n^2)
 
 ### *Different terms for different inputs*
@@ -156,9 +161,13 @@
 ### Drop non dominant terms
 
 * In the case of O(n^2 + 3n + n/2) n^2 is the dominant term so we drop the rest and keep 0(n^2) because of scalability.
+
 * If n = 5, (5 * 5) is more dominant than (3 * 5) or (5 / 2). That's why we drop the rest and keep the most dominant
+
 ---
+
 ![Alt text](./BigO-cheat-sheet-1.png?raw=true "Title")
+
 ---
 
 ## O(n!) Factorial Time
@@ -169,7 +178,7 @@
 
 ### *Example of O(n!)*
 
-#### https://stackoverflow.com/questions/3953244/example-of-on
+#### [example of O(n) stack overflow question](https://stackoverflow.com/questions/3953244/example-of-on)
 
 ## Three Pillars of Good Code
 

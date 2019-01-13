@@ -20,17 +20,23 @@
 
 ## Better Approach
 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
+[Using Object Set / Hash Table](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
 
     function hasPairWithSum2(arr, sum) {
+
       const mySet = new Set();
       const len = arr.length;
+
         for (let i = 0; i < len; i++) {
+
         if (mySet.has(arr[i])) {
+
         return true;
         }
+
         mySet.add(sum - arr[i]);
         }
+
       return false;
     }
     hasPairWithSum2(arr1, sum); // true
