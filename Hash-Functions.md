@@ -136,3 +136,9 @@
 
     // We're putting items randomly in a shelf but when we retrieve them they are all in order.
 * **In this case, objects may not be the best solution. Possibly using for in loops , but it's slow and there is no guaranteed order**
+* **We're putting items randomly in a shelf but when we retrieve them they are all in order**
+* **In this case, objects may not be the best solution. Possibly using for in loops , but it's slow and there is no guaranteed order**
+* **Hash tables are great when you want quick access to certain values. This is why hash tables are so common databases.**
+* **Keys are called indexes in an array. Advantages is we can select the key in a hash table but not in an array which we have to loop.**
+* **Hash tables are kind of like a hack on top of an array that lets us use flexible keys.**
+* **Downside of hash tables is no concept of order. in arrays, each item is placed next to each other on a shelf in memory. Hash tables are placed all over the place.**
