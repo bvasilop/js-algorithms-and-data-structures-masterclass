@@ -56,3 +56,14 @@
     [Wiki Hash Tables](https://en.wikipedia.org/wiki/Hash_table)
 
     [Hash Table Animation](https://www.cs.usfca.edu/~galles/visualization/OpenHash.html)
+
+### Upside to Using Hash Tables
+
+* **Fast lookups**
+* **Fast Inserts**
+* **Flexible Keys**
+
+### Downside to using Hash Tables
+
+* **Unordered**
+* **Slow key iteration**
