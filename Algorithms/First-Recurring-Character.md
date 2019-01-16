@@ -2,7 +2,7 @@
 
 ## Common Google Question
 
-### *Given an array, tell me the first recurring character*
+### *Given an array, find the first recurring character*
 
 * **Given an array [2, 5, 1, 2, 3, 5, 1, 2, 4]// It should return 2**
 
@@ -12,7 +12,7 @@
 
 ---
 
-## Brute force
+## Brute force O(n^2)
 
     function firstRecurringCharacter(input) {
       for (let i = 0; i < input.length; i++) {
@@ -30,7 +30,7 @@
     //firstRecurringCharacter([2, 5, 1, 2, 3, 5, 1, 2, 4]);
     firstRecurringCharacter([1, 2]); // undefined // O(n^2)
 
-## Using Hash Tables / Objects
+## Using Hash Tables / Objects O(n)
 
     function firstRecurringCharacter2(input) {
 
