@@ -1,12 +1,12 @@
 # Two Sum Algorithm using Hash Tables
 
-## Our two sum function which will return all pairs in the array that add up to a given sum
+## A two sum function which will return all pairs in the array that add up to a given sum
 
 ### *Find all the pairs of two integers in an unsorted array that add up to a given sum*
 
 ### Brute Force Naive Solution O(n^2)
 
-* **A naive approach to this problem would be to loop through each number and then loop again through the array looking for a pair that sums to S. The running time for the below solution would be O(n2) because in the worst case we are looping through the array twice to find a pair.**
+* **A naive approach to this problem would be to loop through each number and then loop again through the array looking for a pair that adds to sum. The running time for the below solution would be O(n2) because in the worst case we are looping through the array twice to find a pair.**
 
 ---
 
