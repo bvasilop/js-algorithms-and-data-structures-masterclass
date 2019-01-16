@@ -2,6 +2,8 @@
 
 ## Our two sum function which will return all pairs in the array that add up to a given sum
 
+### *Find all the pairs of two integers in an unsorted array that add up to a given sum*
+
 ### Brute Force Naive Solution O(n^2)
 
 * **A naive approach to this problem would be to loop through each number and then loop again through the array looking for a pair that sums to S. The running time for the below solution would be O(n2) because in the worst case we are looping through the array twice to find a pair.**
@@ -38,7 +40,7 @@
 
 * **We can write a faster algorithm that will find pairs that add up to sum in linear time. The algorithm below makes use of hash tables which have a constant lookup time O(1). As we pass through each element in the array, we check to see if the sum minus the current element (counterpart) exists in the hash table. We only need to loop through the array once, resulting in a running time of O(n) since each lookup and insertion in a hash table is O(1).**
 
-**Example**
+### Example
 
 * If the array is: [4, 5, 1, 8] and the sum is 6 the algorithm would proceed with the steps below:
 
