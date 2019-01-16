@@ -6,13 +6,13 @@
 
     function twoSum(numArray, sum) {
 
-      var pairs = [];
+      const pairs = [];
 
       // check each element in array
-      for (var i = 0; i < numArray.length; i++) {
+      for (let i = 0; i < numArray.length; i++) {
 
         // check each other element in the array
-        for (var j = i + 1; j < numArray.length; j++) {
+        for (let j = i + 1; j < numArray.length; j++) {
 
           // determine if these two elements add up to sum
           if (numArray[i] + numArray[j] === sum) {
@@ -34,11 +34,11 @@
 
     function twoSum(numArray, sum) {
 
-    var pairs = [];
-    var hashTable = {};
+    const pairs = [];
+    const hashTable = {};
 
     // check each element in array
-    for (var i = 0; i < numArray.length; i++) {
+    for (let i = 0; i < numArray.length; i++) {
       currentNum = numArray[i];
 
       // create a counterpart by calculating sum - current element
