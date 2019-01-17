@@ -1,6 +1,6 @@
 # Hash Tables
 
-## Hash tables are known as Objects in JavaScript
+## Hash Tables are known as Objects in JavaScript
 
 * Known as hash maps, maps, unordered maps, dictionaries, objects
 
@@ -39,7 +39,7 @@
 
 * Collision occurs when hash function randomly allocates a position in memory in the same location as a previous item
 
-* Because of this collision we need a way to store both users somehow in this address space
+* Because of this collision we need a way to store both users somehow in this address space. (Good collision resolution --usually computer -under-the-hood takes care of it for us)
 
 * Linked Lists can occur as a result of collision
   with hash tables, we can't avoid collisions because we're dealing with data with limited memory
