@@ -142,33 +142,33 @@
         }
 
         insert(index, value) { // insert at this location, this value //insert is O(n) because of looping
-      if (index >= this.length) { // check parameters // if ... add to end of list
+        if (index >= this.length) { // check parameters // if ... add to end of list
         return this.append(value); // add to end of list
-      }
-      const newNode = {
+        }
+        const newNode = {
         value: value,
         next: null
-      };
-      const leader = this.traverseToIndex(index-1); // points to leader
-      const holdingPointer = leader.next; // number 5 from array is referenced in this variable
-      leader.next = newNode; // now we can update leader.next to point to new node
-      newNode.next = holdingPointer; // reassign new pointer
-      this.length++;
-      return this.printList(); // => [ 1, 10, 99, 5, 16 ]
-      }
+        };
+        const leader = this.traverseToIndex(index-1); // points to leader
+        const holdingPointer = leader.next; // number 5 from array is referenced in this variable
+        leader.next = newNode; // now we can update leader.next to point to new node
+        newNode.next = holdingPointer; // reassign new pointer
+        this.length++;
+        return this.printList(); // => [ 1, 10, 99, 5, 16 ]
+        }
 
-      traverseToIndex(index) { // we must traverse list to find index for adding element. Linked List only has reference to this.head and this.tail
-      //check for parameters if you want // traversal is O(n) because of looping
-      let counter = 0;
-      let currentNode = this.head;
-      while (counter !== index) {// as soon as we get to the index we want, stop
-      currentNode = currentNode.next; // until then traverse through list
-      counter++;
-      }
-      return currentNode; // returns current node which is 10 --we grabbed a reference to the leader -- now hold pointer for next item (5)
-      }
+        traverseToIndex(index) { // we must traverse list to find index for adding element. Linked List only has reference to this.head and this.tail
+        //check for parameters if you want // traversal is O(n) because of looping
+        let counter = 0;
+        let currentNode = this.head;
+        while (counter !== index) {// as soon as we get to the index we want, stop
+        currentNode = currentNode.next; // until then traverse through list
+        counter++;
+        }
+        return currentNode; // returns current node which is 10 --we grabbed a reference to the leader -- now hold pointer for next item (5)
+        }
 
-      remove(index) {
+        remove(index) {
         // check params if u want
         const leader = this.traverseToIndex(index-1); // we want to make sure that we remove the 10 to 99 pointer and instead point 10 to 5. due to garbage collection, as soo as 99 is removed, it is deleted from memory
         const unwantedNode = leader.next; // create a reference to 5 --[ 1, 10, 99, 5, 16, 88 ]
@@ -176,15 +176,15 @@
         this.length--;
         return this.printList(); // delete is O(n)
         }
-      }
+        }
 
-      reverse() {
+        reverse() {
         if (this.head.next
-      }
-      /*  *    *   reassigning pointers for nodes
+        }
+        /*  *    *   reassigning pointers for nodes
             \ /
              *
-    */
+       */
 
     const myLinkedList = new LinkedList(10);
     myLinkedList.append(5); // => LinkedList {
