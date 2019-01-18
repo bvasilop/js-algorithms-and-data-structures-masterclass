@@ -12,7 +12,7 @@
 * **They can be sorted or unsorted**
 * **Nodes can contain all forms of data types**
 
-## Doubly Linked Lists and Singly Linked Lists
+## Singly Linked Lists and  Doubly Linked Lists
 
 * **get(i) — maybe a trivial operation, return ai (0-based indexing)**
 * **search(v) — decide if item/data v exists (and report its position/index) or not exist (and usually report a non existing index -1) in the list**
@@ -23,6 +23,15 @@
 * **Iterating through a linked list or traversing through a linked list is usually quite a bit slower than iterating through items like an array O(n)**
 * **Advantages of using a linked list over an array is you don't have to worry about index shifting.**
 * **Advantages of using linked lists over hash tables is there is a sense of order where one pointer is pointing to the next node. So you can have sorted data unlike hash tables**
+
+* **Doubly linked list are similar except that it links to the node before it.**
+
+* **Doubly linked lists allow us to traverse our list backwards because of the extra pointer from the second element pointing backward toward the head.**
+
+* **Singly linked lists can only go from beginning to the end of a list. Doubly Linked Lists can traverse forward and backward in either direction.**
+* **It's exactly the same as the Singly Linked List but contains this additional pointer to the previous node and searching through a Doubly Linked List can actually be a little bit more efficient.**
+* **Look up can technically be O(n/2) because we can start at both ends and if we know which half of the list the item we're looking for is, we can pick the optimum place to start.**
+* **A downside to a doubly linked list is that we might have to hold a little bit more memory and an additional block of memory**
 
 ---
 
