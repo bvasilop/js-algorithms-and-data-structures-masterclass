@@ -24,14 +24,14 @@
 * **Advantages of using a linked list over an array is you don't have to worry about index shifting.**
 * **Advantages of using linked lists over hash tables is there is a sense of order where one pointer is pointing to the next node. So you can have sorted data unlike hash tables**
 
-* **Doubly linked list are similar except that it links to the node before it.**
+* **Doubly linked lists are similar to Singly Linked Lists except that it links to the node before it.**
 
 * **Doubly linked lists allow us to traverse our list backwards because of the extra pointer from the second element pointing backward toward the head.**
 
-* **Singly linked lists can only go from beginning to the end of a list. Doubly Linked Lists can traverse forward and backward in either direction.**
+* **Singly Linked Lists can only go from beginning to the end of a list. Doubly Linked Lists can traverse forward and backward in either direction.**
 * **It's exactly the same as the Singly Linked List but contains this additional pointer to the previous node and searching through a Doubly Linked List can actually be a little bit more efficient.**
 * **Look up can technically be O(n/2) because we can start at both ends and if we know which half of the list the item we're looking for is, we can pick the optimum place to start.**
-* **A downside to a doubly linked list is that we might have to hold a little bit more memory and an additional block of memory**
+* **A downside to a Doubly Linked Lists is that we might have to hold a little bit more memory and an additional block of memory**
 
 ---
 
@@ -90,53 +90,119 @@
 
 **1-->10-->5–->16**
 
+    class Node { // creating class for new Nodes (OOP) // creates a node with a value and next property
+      constructor(value) {
+      this.value = value;
+      this.next = null;
+      }
+    }
+
     class LinkedList {
       constructor(value) {
         this.head = {
-          value: value,
-          next: null // because we're instantiating the     class first
-        }
+        value: value,
+        next: null // because we're instantiating the class first
+        };
         this.tail = this.head;
         this.length = 1;
       }
 
       append(value) {
-        const newNode = {
-          value: value,
-          next: null
-        };
-        this.tail.next = newNode; // grabs next value and     pointer and point to newNode
-        this.tail = newNode; // update tail to be the new     node
-        this.length++; // we add the length to equal 2    (nodes)
+        const newNode = new Node(value); // instantiate new Node from class
+        // const newNode = {
+        //   value: value,
+        //   next: null
+        // };
+        this.tail.next = newNode; // grabs next value and pointer and point to newNode
+        this.tail = newNode; // update tail to be the new node
+        this.length++; // we add the length to equal 2 (nodes)
         return this; // so we get back our linked list
         }
 
         prepend(value) {
+          //const newNode = new Node(value); // instantiate new Node from class
           const newNode = { // create empty node
             value: value,
             next: null
           };
-          this.head.next = newNode; // we just created    pointer to head
+          newNode.next = this.head; // we just created pointer to head
           this.head = newNode; // update the reference
           this.length++; // increase length of our list
           return this;
         }
+
+          printList() { // lists our linked list in   an array
+          const array = [];
+          let currentNode = this.head;
+          while (currentNode !== null) {// while this condition is happening, run the commands below // while loops are good if we don't know the length of something
+          array.push(currentNode.value);
+          currentNode = currentNode.next; // update current to currentNode.next
+          }
+          return array;
+        }
+
+        insert(index, value) { // insert at this location, this value //insert is O(n) because of looping
+      if (index >= this.length) { // check parameters // if ... add to end of list
+        return this.append(value); // add to end of list
+      }
+      const newNode = {
+        value: value,
+        next: null
+      };
+      const leader = this.traverseToIndex(index-1); // points to leader
+      const holdingPointer = leader.next; // number 5 from array is referenced in this variable
+      leader.next = newNode; // now we can update leader.next to point to new node
+      newNode.next = holdingPointer; // reassign new pointer
+      this.length++;
+      return this.printList(); // => [ 1, 10, 99, 5, 16 ]
       }
 
-    const myLinkedList = new LinkedList(10);
+      traverseToIndex(index) { // we must traverse list to find index for adding element. Linked List only has reference to this.head and this.tail
+      //check for parameters if you want // traversal is O(n) because of looping
+      let counter = 0;
+      let currentNode = this.head;
+      while (counter !== index) {// as soon as we get to the index we want, stop
+      currentNode = currentNode.next; // until then traverse through list
+      counter++;
+      }
+      return currentNode; // returns current node which is 10 --we grabbed a reference to the leader -- now hold pointer for next item (5)
+      }
 
+      remove(index) {
+        // check params if u want
+        const leader = this.traverseToIndex(index-1); // we want to make sure that we remove the 10 to 99 pointer and instead point 10 to 5. due to garbage collection, as soo as 99 is removed, it is deleted from memory
+        const unwantedNode = leader.next; // create a reference to 5 --[ 1, 10, 99, 5, 16, 88 ]
+        leader.next = unwantedNode.next; // reassign new leader pointer
+        this.length--;
+        return this.printList(); // delete is O(n)
+        }
+      }
+
+      reverse() {
+        if (this.head.next
+      }
+      /*  *    *   reassigning pointers for nodes
+            \ /
+             *
+    */
+
+    const myLinkedList = new LinkedList(10);
     myLinkedList.append(5); // => LinkedList {
     //   head: { value: 10, next: { value: 5, next: null } },
     //   tail: { value: 5, next: null },
     //   length: 2 }
 
     myLinkedList.append(16);//  => LinkedList {
-    //   head: { value: 10, next: { value: 5, next: [Object]    } },
+    //   head: { value: 10, next: { value: 5, next: [Object] } },
     //   tail: { value: 16, next: null },
     //   length: 3 }
     //console.log(myLinkedList);
-
-    // myLinkedList.prepend(1); => LinkedList {
+    myLinkedList.prepend(1); // => LinkedList {
     //   head: { value: 1, next: null },
     //   tail: { value: 16, next: null },
     //   length: 4 }
+    myLinkedList.printList(); // => [ 1, 10, 99, 5, 16 ]
+    myLinkedList.insert(2, 99); // // 1-->10-->99-->5–->16
+    myLinkedList.insert(20,88) // added at index 20(doesn't exist) so added at end of list
+    myLinkedList.printList(); // added printList because of append if() check // => [ 1, 10, 99, 5, 16, 88 ]
+    myLinkedList.remove(2); // goes from => [ 1, 10, 99, 5, 16, 88 ] to => [ 1, 10, 5, 16, 88 ]
