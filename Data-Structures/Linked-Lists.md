@@ -1,15 +1,15 @@
 # Linked Lists
 
-* Linked List is a data structure consisting of a group of vertices (nodes) which together represent a sequence.Under the simplest form, each vertex is composed of a data and a reference (link) to the next vertex in the sequence.
+* Linked List is a data structure that consists of a group of vertices (nodes) which together represent a sequence. Under the simplest form, each vertex is composed of a data and a reference (link) to the next vertex in the sequence.
 
 * Linked List and its variations are used as underlying data structure to implement List, Stack, Queue, and Deque ADTs
 * It is a simple linear data structure,
     It has a range of potential applications as a list ADT e.g. student list, event list, appointment list, etc (albeit there are other more advanced data structures that can do the same (and more) applications better) or as stack/queue/deque ADTs
 * It has interesting corner/special cases to illustrate the need for a good implementation of a data structure
 * It has various customization options and thus usually this Linked List data structure is taught using Object-Oriented Programming (OOP) way.
-* A list that is linked .Contains a set of nodes. Contains two elements. The value of the data you want to store. And a pointer to the next node in Line. First Node is the head, the last node is the tail.
+* A list that is linked. Contains a set of nodes. Contains two elements. The value of the data you want to store. And a pointer to the next node in line. First Node is the head, the last node is the tail.
 * They are null terminated which signifies it's at the end of the list
-* An element that links to the next element...that links to the next element...until you hit the last element that points to null
+* An element that links to the next element... that links to the next element... until you hit the last element that points to null
 * They can be sorted or unsorted
 * Nodes can contain all forms of data types
 
