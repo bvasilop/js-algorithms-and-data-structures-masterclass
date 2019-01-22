@@ -7,7 +7,7 @@ function reverse(str) {
   if (!str ||  typeof str !== 'string'  || str.length < 2) {
     return 'please enter a valid string';
   }
-
+  str = str.toLowerCase()
   const backwards = [];
   let totalItems = str.length - 1;
 
