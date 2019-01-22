@@ -1,6 +1,6 @@
 # Hash Functions
 
-![Alt text](./Hash-tables.png?raw=true "Title")
+![Alt text](./hash-tables.png?raw=true "Title")
 
 ![Alt text](./hash-vs-arrays.png?raw=true "Title")
 
