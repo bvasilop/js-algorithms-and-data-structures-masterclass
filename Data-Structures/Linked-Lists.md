@@ -1,5 +1,7 @@
 # Linked Lists
 
+![Alt text](./Doubly-Linked-Lists.png?raw=true "Title")
+
 * Linked List is a data structure that consists of a group of vertices (nodes) which together represent a sequence. Under the simplest form, each vertex is composed of a data and a reference (link) to the next vertex in the sequence.
 
 * Linked List and its variations are used as underlying data structure to implement List, Stack, Queue, and Deque ADTs
