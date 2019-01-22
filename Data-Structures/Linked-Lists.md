@@ -48,7 +48,7 @@
 
 #### Cons
 
-* It cannot be iterated in reverse or traverse from back to front if we ever lose the reference to `this.headNode` of the list.The list can actually be lost in memory forever so singly list is appropriate to use when you have less memory or memory is really expensive. Primarily used for fast insertion and deletion and not so much searching
+* It cannot be iterated in reverse or traverse from back to front if we ever lose the reference to `this.headNode` of the list.The list can actually be lost in memory forever so singly list is appropriate to use when you have less memory or memory is really expensive. Primarily used for fast insertion and deletion and not so much searching.
 
 * For doubly linked lists, the plus side is that it can be iterated or traversed both from the front or from the back. Also, if you need to delete a previous node you don't need to traverse from the head node and find what the previous notice which a singly list linked list has no concept of.You can do that fairly easily with a doubly linked list.
 * The downside of using doubly linked lists is that it is fairly complex and requires more memory and storage because of the extra property. There are some actual operations that we need to perform to ensure that when we insert and delete, that the previous property is updated as well. So double linked lists are really good when you don't have that much limitation on memory and when you want good operation for searching for elements, such as searching backwards instead of just forwards.
