@@ -202,8 +202,7 @@ function returnArrayinPlace(arr) {
     let tempVar = arr[i];
 
     arr[i] = arr[arr.length -1 -i];
-    arr[arr.length -1 -i] = arr[i];
-    tempVar = arr[i];
+    arr[arr.length -1 -i] = tempVar;
 
   }
   return arr;
