@@ -1,5 +1,11 @@
 # Hash Functions
 
+![Alt text](./Hash-tables.png?raw=true "Title")
+
+![Alt text](./hash-vs-arrays.png?raw=true "Title")
+
+![Alt text](./hash-collisions.png?raw=true "Title")
+
 * **Hash function is used to convert the key (grapes) into a memory address and store both the key and value into this new numerical address**
 * **A hash function is simply a function that generates a value of fixed length for each input that it gets.**
 * **We give it an input and the function generates some random pattern.**
