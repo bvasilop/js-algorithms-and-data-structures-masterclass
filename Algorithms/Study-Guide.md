@@ -330,7 +330,7 @@ const array2 = ['z', 'y', 'x'];
      containsCommonItem2(array1, array2); // true
 ```
 
-## Given an array, tell me the first recurring character
+## Given an array, return the first recurring character
 
 ### Brute Force - Nested Loops
 
