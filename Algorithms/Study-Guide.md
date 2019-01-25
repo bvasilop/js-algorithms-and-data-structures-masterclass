@@ -37,6 +37,24 @@ const reverse5 = str => [...str].reverse().join('');
 reverse5('yippeeeee'); //'eeeeeppiy' // O(n) Time Complexity
 ```
 
+## Reverse a String in Place
+
+```
+function reverse(str) {
+
+  str = str.toLowerCase().split('');
+
+  for (let i = 0; i < str.length / 2; i++) {
+    let currentLetter = str[i];
+
+    str[i] = str[str.length - 1 - i];
+    str[str.length - 1 - i] = currentLetter;
+    }
+  return str.join('');
+}
+reverse('Hello World'); // => 'dlrow olleh'
+```
+
 ## Two Sum Algorithm (Google ?--Return True/False)
 
 ### Brute Force - Nested Loops
