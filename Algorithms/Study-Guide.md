@@ -55,7 +55,7 @@ function reverse(str) {
 reverse('Hello World'); // => 'dlrow olleh'
 ```
 
-## Two Sum Algorithm (Google ?--Return True/False)
+## Two Sum Algorithm (Google ? -- True/False)
 
 ### Brute Force - Nested Loops
 
