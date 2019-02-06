@@ -178,6 +178,37 @@ return lettersArray.join('') === lettersArray.reverse().join('');
 isPalindrome(`Madam I'm Adam`); // True // O(n) Time Complexity
 ```
 
+### Is Palindrome with Integers
+
+```
+var isPalindrome = function(nums) {
+  const reverse = parseInt(nums.toString().split('').reverse().join(''));
+    return nums === reverse
+  };
+
+isPalindrome(121); //true
+```
+
+### Is Palindrome with Integers without using API libraries (faster runtime)
+
+```
+var isPalindrome = function(x) {
+    if ( x < 0 || (x % 10 === 0 && x !== 0) ) {
+        return false;
+    }
+    var reverse_x = 0;
+    while(x > reverse_x) {
+        reverse_x = reverse_x * 10 + x % 10;
+        if (reverse_x === x) {
+            return true;
+        }
+        x = Math.floor(x / 10);
+    }
+    return reverse_x === x;
+};
+isPalindrome(121); //true
+```
+
 ## Is an Anagram
 
 ### Hash Tables
