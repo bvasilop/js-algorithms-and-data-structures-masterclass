@@ -26,7 +26,7 @@
 
 ![Queues](./Queues.png?raw=true "Queues")
 
-* **FIFO** -- First** in...first out
+* **FIFO** -- First in...first out
 * **lookup** O(n)
 * **enqueue** O(1) --add to first person in queue
 * **dequeue** O(1) -- remove first person from line
@@ -44,4 +44,3 @@
 ### Why would you not want to use an Array to build a Queue
 
 * it's very inefficient because we're removing the first item from the list. If you shift something, you remove the first item you're going to have to shift all of the indexes
-* d
