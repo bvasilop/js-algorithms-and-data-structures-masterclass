@@ -45,7 +45,6 @@
 
 * it's very inefficient because we're removing the first item from the list. If you shift something, you remove the first item you're going to have to shift all of the indexes
 
-
 ### How do we create a stack data structure that has peak, push and pop?
 
 [Udemy course video](https://www.udemy.com/master-the-coding-interview-data-structures-algorithms/learn/v4/t/lecture/12333106?start=0)
@@ -68,7 +67,7 @@ class Stack {
     return this.top; // very top item // returns null
   }
   push(value){
-    const newNode = new Node(value); // use instantiated Node class from above
+    const newNode = new Node(value); // use instantiated Node class from above with value we want to push with
     if (this.length === 0) { // if empty
       this.top = newNode;
       this.bottom = newNode;
@@ -96,14 +95,14 @@ class Stack {
 }
 
 const myStack = new Stack();
-//myStack.peek();
+myStack.peek();
 myStack.push('google');
 myStack.push('udemy');
 myStack.push('discord');
 myStack.peek();
 myStack.pop();
-// myStack.pop();
-// myStack.pop();
+myStack.pop();
+myStack.pop();
 
 
 //Discord
