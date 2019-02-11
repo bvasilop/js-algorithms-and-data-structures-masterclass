@@ -108,5 +108,42 @@ myStack.pop();
 //Discord
 //Udemy
 //google
+```
 
+### How do we create a stack data structure that implements array methods?
+
+[Udemy course video](https://www.udemy.com/master-the-coding-interview-data-structures-algorithms/learn/v4/t/lecture/12334318?start=0)
+
+```
+class Stack {
+  constructor(){
+    this.array = []; // create empty array
+  }
+  peek() {
+    return this.array[this.array.length-1]; // want to see very end of array
+  }
+  push(value){
+    this.array.push(value); // add value to end of array
+    return this;
+  }
+  pop(){
+    this.array.pop(); // remove from end of array
+    return this;
+  }
+}
+
+const myStack = new Stack();
+myStack.peek();
+myStack.push('google');
+myStack.push('udemy');
+myStack.push('discord');
+myStack.peek();
+myStack.pop();
+myStack.pop();
+myStack.pop();
+
+
+//Discord
+//Udemy
+//google
 ```
