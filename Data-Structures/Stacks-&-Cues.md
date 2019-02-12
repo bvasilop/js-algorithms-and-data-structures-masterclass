@@ -147,3 +147,68 @@ myStack.pop();
 //Udemy
 //google
 ```
+
+### How do we implement a queue data structure?
+
+[Udemy course video](https://www.udemy.com/master-the-coding-interview-data-structures-algorithms/learn/v4/t/lecture/12334450?start=0)
+
+
+```
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+class Queue {
+  constructor(){
+    this.first = null;
+    this.last = null;
+    this.length = 0;
+  }
+  peek() {
+    return this.first;
+  }
+  enqueue(value){ // add to queue
+    const newNode = new Node(value); // instantiate with value
+      if (this.length === 0) { // nothing in our queue
+      this.first = newNode;
+      this.last = newNode;
+    } else {
+      this.last.next = newNode;
+      this.last = newNode;
+    }
+    this.length++; // increase length by 1
+    return this;
+  }
+  dequeue(){ // remove from front of list
+  if (!this.first) { // if queue is empty
+    return null;
+  }
+  if (this.first === this.last) { // check to see if last in queue
+    this.last = null; // last points to null
+  }
+  const holdingPointer = this.first;
+  this.first = this.first.next; // we want whoever is after Joy to be the new first in line
+  this.length--; // decrease length
+  return this; // return holdingPointer if want to keep reference
+  }
+  //isEmpty;
+}
+
+const myQueue = new Queue();
+myQueue.enqueue('Joy');
+myQueue.enqueue('Matt');
+myQueue.enqueue('Pavel');
+myQueue.enqueue('Samir');
+myQueue.peek();
+myQueue.dequeue(); // we lose Joy node from memory and is garbage collected. If we want to keep node then implement holdingPointer like in previous example
+myQueue.dequeue();
+myQueue.dequeue();
+myQueue.dequeue();
+
+//Joy
+//Matt
+//Pavel
+//Samir
+```
