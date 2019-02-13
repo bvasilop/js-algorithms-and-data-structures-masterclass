@@ -212,3 +212,5 @@ myQueue.dequeue();
 //Pavel
 //Samir
 ```
+
+![Stacks-&-Queues](./Stacks&Queues2.png?raw=true "Stacks")
