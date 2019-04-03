@@ -11,8 +11,10 @@
 
 ## Write a function which takes two numbers and returns their sum
 
-    const sum = (num1, num2) => num1 + num2;
-    sum(2,3);
+```javascript
+const sum = (num1, num2) => num1 + num2;
+sum(2,3);
+```
 
 ### Understanding the Problem
 
@@ -75,30 +77,32 @@
 * Explicitly writing out the steps that you need to take.
 * This forces you to think about your code before you actually write it so that you're not just Freewheelin' and trying to come up with it on the fly.
 
-      function charCount(str) {
-        // do something
-        // return an object with keys that are alpha numeric characters in a string;
-        // values should be the counts for those characters
+```javascript
+function charCount(str) {
+  // do something
+  // return an object with keys that are alpha numeric characters in a string;
+  // values should be the counts for those characters
 
-        // make object to return at
-        const result = {};
-        // loop over string, for each character
-        for(let i = 0; i < str.length; i++) {
-        let char = str[i].toLowerCase();
-        // if the char is a number/letter AND a key in object, add one to count
-        if (result[char] > 0 ) {
-          result[char]++;
-        // if char is a number/letter AND not in object, add it and set value to 1
-        } else {
-          result[char] = 1;
-        }
-      };  // could use regex for alphanumeric char
-        // if char is something else (space, period, etc.) don't do anything return object at end
+  // make object to return at
+  const result = {};
+  // loop over string, for each character
+  for(let i = 0; i < str.length; i++) {
+  let char = str[i].toLowerCase();
+  // if the char is a number/letter AND a key in object, add one to count
+  if (result[char] > 0 ) {
+    result[char]++;
+  // if char is a number/letter AND not in object, add it and set value to 1
+  } else {
+    result[char] = 1;
+  }
+};  // could use regex for alphanumeric char
+  // if char is something else (space, period, etc.) don't do anything return object at end
 
-      return result;
-      }
+return result;
+}
 
-      charCount("Hello");
+charCount("Hello");
+```
 
 ## Solve/Simplify
 
@@ -126,98 +130,108 @@
 
 ## Simplified solution
 
-    function charCount(str) {
-      var obj = {};
-        for(var i = 0; i < str.length; i++) {
-        var char = str[i].toLowerCase();
-        if(/[a-z0-9]/.test(char)) { // regex to test alphanumeric a-z 0-9
-        if (obj[char] > 0) { // char is either number or letter
+```javascript
+function charCount(str) {
+var obj = {};
+  for(var i = 0; i < str.length; i++) {
+    var char = str[i].toLowerCase();
+      if(/[a-z0-9]/.test(char)) { // regex to test alphanumeric a-z 0-9
+      if (obj[char] > 0) { // char is either number or letter
         obj[char]++; // if > 0 then add  to the value
-        } else {
-        obj[char] = 1; // otherwise initialize to 1
-        }
-      }
-    }
-      return obj;
-    }
-    charCount('Hello 420')
-
-### Further Refactor
-
-    function charCount(str) {
-      var obj = {};
-        for(var char of str) { // use for of instead of for loop because if we use for of in a string it gives us each character immediately
-        char = char.toLowerCase();
-        if (/[a-z0-9]/.test(char)) { // regex to test alphanumeric a-z 0-9
-        if (obj[char] > 0) { // char is either number or letter
-            obj[char]++;  // if > 0 then add  to the value
       } else {
-          obj[char] = 1; // otherwise initialize to 1
-        }
+        obj[char] = 1; // otherwise initialize to 1
       }
     }
-    return obj;
-    }
-    charCount('Hello 420')
+  }
+return obj;
+}
+charCount('Hello 420')
+```
 
 ### Further Refactor
 
-    function charCount(str) {
-      var obj = {};
-        for(var char of str) {
-          char = char.toLowerCase();
-          if (/[a-z0-9]/.test(char)) { // question whether using a regex is the most efficient way. Browser issues? Speed?
-          obj[char] = ++obj[char] || 1; // takes a char a, accesses a corresponding value in our object.
-          // if it's (if there's a value in there already, we're going to add one to it.
-          // if there's nothing in there, we're going to set it to one (|| or set to 1)
-          }
-        }
-    return obj;
+```javascript
+function charCount(str) {
+  var obj = {};
+    for(var char of str) { // use for of instead of for loop because if we use for of in a string it gives us each character immediately
+    char = char.toLowerCase();
+    if (/[a-z0-9]/.test(char)) { // regex to test alphanumeric a-z 0-9
+    if (obj[char] > 0) { // char is either number or letter
+        obj[char]++;  // if > 0 then add  to the value
+  } else {
+      obj[char] = 1; // otherwise initialize to 1
     }
-    charCount('Hello 420')
+  }
+}
+return obj;
+}
+charCount('Hello 420')
+```
+
+### Further Refactor
+
+```javascript
+function charCount(str) {
+  var obj = {};
+    for(var char of str) {
+      char = char.toLowerCase();
+      if (/[a-z0-9]/.test(char)) { // question whether using a regex is the most efficient way. Browser issues? Speed?
+      obj[char] = ++obj[char] || 1; // takes a char a, accesses a corresponding value in our object.
+      // if it's (if there's a value in there already, we're going to add one to it.
+      // if there's nothing in there, we're going to set it to one (|| or set to 1)
+      }
+    }
+return obj;
+}
+charCount('Hello 420')
+```
 
 ### Refactor Again
 
-    function charCount(str) {
-      var obj = {};
-        for(var char of str) {
-          char = char.toLowerCase();
-          if (/[a-z0-9]/.test(char)) { // question whether using a regex is the most efficient way. Browser issues? Speed?
-          obj[char] = ++obj[char] || 1; // takes a char a, accesses a corresponding value in our object.
-          // if it's (if there's a value in there already, we're going to add one to it.
-          // if there's nothing in there, we're going to set it to one (|| or set to 1)
-          }
-        }
-      return obj;
+```javascript
+function charCount(str) {
+  var obj = {};
+    for(var char of str) {
+      char = char.toLowerCase();
+      if (/[a-z0-9]/.test(char)) { // question whether using a regex is the most efficient way. Browser issues? Speed?
+      obj[char] = ++obj[char] || 1; // takes a char a, accesses a corresponding value in our object.
+      // if it's (if there's a value in there already, we're going to add one to it.
+      // if there's nothing in there, we're going to set it to one (|| or set to 1)
+      }
     }
+  return obj;
+}
+```
 
 ### Refactor Again
 
 #### More efficient solution
 
-    function charCount(str) {
-      var obj = {};
-        for (var char of str) {
-        if (isAlphaNumeric(char)) { // question whether using a regex is the most efficient way. Browser issues? Speed?
-          char = char.toLowerCase(); // question where the best placement for the toLowerCase method should be. // helps with readability nesting in . for statement
-          obj[char] = ++obj[char] || 1;  // then add char to our obj or init to 1 (current value)
-          // takes a char a, accesses a corresponding value in our object.
-          // if it's (if there's a value in there already, we're going to add one to it.
-          // if there's nothing in there, we're going to set it to one (|| or set to 1)
-          }
-        }
-      return obj;
+```javascript
+function charCount(str) {
+  var obj = {};
+    for (var char of str) {
+    if (isAlphaNumeric(char)) { // question whether using a regex is the most efficient way. Browser issues? Speed?
+      char = char.toLowerCase(); // question where the best placement for the toLowerCase method should be. // helps with readability nesting in . for statement
+      obj[char] = ++obj[char] || 1;  // then add char to our obj or init to 1 (current value)
+      // takes a char a, accesses a corresponding value in our object.
+      // if it's (if there's a value in there already, we're going to add one to it.
+      // if there's nothing in there, we're going to set it to one (|| or set to 1)
+      }
     }
-    function isAlphaNumeric(char) {
-    var code = char.charCodeAt(0); // gives us first character which is only character. Should return true for each time
-      if (!(code > 47 && code < 58) && // numeric (0-9)
-          !(code > 64 && code < 91) && // upper alpha (A-Z)
-          !(code > 96 && code < 123)) { // lower alpha (a-z)
-        return false;
-        }
-        return true;
+  return obj;
+}
+function isAlphaNumeric(char) {
+var code = char.charCodeAt(0); // gives us first character which is only character. Should return true for each time
+  if (!(code > 47 && code < 58) && // numeric (0-9)
+      !(code > 64 && code < 91) && // upper alpha (A-Z)
+      !(code > 96 && code < 123)) { // lower alpha (a-z)
+    return false;
     }
-    charCount('Hello');
+    return true;
+}
+charCount('Hello');
+```
 
 ## Recap
 

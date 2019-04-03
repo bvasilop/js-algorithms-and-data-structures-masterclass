@@ -2,7 +2,7 @@
 
 ## Reverse a String
 
-```
+```javascript
 function reverse(str) {
   if (!str ||  typeof str !== 'string'  || str.length < 2) {
     return 'please enter a valid string';
@@ -22,24 +22,24 @@ function reverse(str) {
 reverse('wooooohoooo'); // => 'oooohooooow' // O(n) Time Complexity
 ```
 
-```
+```javascript
 const reverse2 = str.split('').reverse().join('');
 reverse2('yipeeee'); // 'eeeepiy' // O(n) Time Complexity
 ```
 
-```
+```javascript
 const reverse3 = str => str.split('').reverse().join('');
 reverse3(str); // 'eeeepiy' // O(n) Time Complexity
 ```
 
-```
+```javascript
 const reverse5 = str => [...str].reverse().join('');
 reverse5('yippeeeee'); //'eeeeeppiy' // O(n) Time Complexity
 ```
 
 ## Reverse a String in Place
 
-```
+```javascript
 function reverse(str) {
 
   str = str.toLowerCase().split('');
@@ -59,7 +59,7 @@ reverse('Hello World'); // => 'dlrow olleh'
 
 ### Brute Force - Nested Loops
 
-```
+```javascript
 const arr1 = [2, 4, 6, 8]
 const sum = 10;
 
@@ -78,7 +78,7 @@ hasPairWithSum(arr1, sum); // true // O(n^2) Time Complexity
 
 ### Hash Tables
 
-```
+```javascript
 const hashtable = {};
 
 function hasPairWithSum2(arr, sum) {
@@ -101,7 +101,7 @@ hasPairWithSum2([2, 4, 6, 8], 10); // true // O(n) Time Complexity
 
 ### Brute Force - Nested Loops
 
-```
+```javascript
 function twoSum(arr, sum) {
   if(!arr || !sum || typeof arr !== 'object' || typeof sum !== 'number' || arr.length < 2) {
     return 'not a valid input';
@@ -125,7 +125,7 @@ twoSum([2, 4, 6, 8], 10); // => [ [ 2, 8 ], [ 4, 6 ] ] // O(n^2) Time Complexity
 
 ### Hash Tables
 
-```
+```javascript
 function twoSum2(arr, sum) {
 
   if (!arr || !sum || typeof arr !== 'object' || typeof sum !== 'number' || arr.length < 2) {
@@ -153,7 +153,7 @@ twoSum2([2, 4, 6, 8], 10) // => [ [ 6, 4 ], [ 8, 2 ] ] // O(n) Time Complexity
 
 ### Store in Array
 
-```
+```javascript
 function isPalindrome(str) {
 
 const string = str.toLowerCase();
@@ -180,7 +180,7 @@ isPalindrome(`Madam I'm Adam`); // True // O(n) Time Complexity
 
 ### Is Palindrome with Integers
 
-```
+```javascript
 var isPalindrome = function(nums) {
   const reverse = parseInt(nums.toString().split('').reverse().join(''));
     return nums === reverse
@@ -191,7 +191,7 @@ isPalindrome(121); //true
 
 ### Is Palindrome with Integers without using API libraries (faster runtime)
 
-```
+```javascript
 var isPalindrome = function(x) {
     if ( x < 0 || (x % 10 === 0 && x !== 0) ) {
         return false;
@@ -213,7 +213,7 @@ isPalindrome(121); //true
 
 ### Hash Tables
 
-```
+```javascript
 function validAnagram(first, second) {
   if (first.length !== second.length) {
     return false;
@@ -240,7 +240,7 @@ validAnagram('anagram', 'nagaram'); // true // O(n) Time complexity
 
 ## Return Reversed Array in PLace
 
-```
+```javascript
 function returnArrayinPlace(arr) {
 
   if (!arr || typeof arr !== 'object' || arr.length < 2) {
@@ -265,7 +265,7 @@ function returnArrayinPlace(arr) {
 
 ### Hash Tables
 
-```
+```javascript
 const str = 'Hello World'.toLowerCase().split('');
 
 function mostFrequentChar() {
@@ -292,7 +292,7 @@ mostFrequentChar(); // 'l' // O(n) Time Complexity
 
 ### Nested Loops
 
-```
+```javascript
 function countUniqueValues(arr){
   if (arr.length === 0)
   return 0;
@@ -319,7 +319,8 @@ countUniqueValues([1, 1, 1, 1, 1, 2]) // 2 // O(n^2) Time Complexity
 ## Given two arrays, create a function that let's users know (true/false) whether the two arrays contain common items
 
 ### Brute Force - Nested Loop
-```
+
+```javascript
 const array1 = ['a', 'b', 'c', 'x'];
 const array2 = ['z', 'y', 'x',];
 
@@ -338,7 +339,7 @@ containsCommonItem(array1, array2); // Time Complexity Big O(a*b) Big O(n^2) // 
 
 ### Hash Tables
 
-```
+```javascript
 const array1 = ['a', 'b', 'c', 'x'];
 const array2 = ['z', 'y', 'x'];
 
@@ -353,47 +354,47 @@ const array2 = ['z', 'y', 'x'];
 //   array2[index] === obj.properties
 //     common solution when trying to improve time complexity
 
-     function containsCommonItem2(array1, array2) {
-       // loop through first array and create obj where properties === items in the array
-      let map = {}; // create object
-      for (let i = 0; i < array1.length; i++) {
-        if (!map[array1[i]]) { // In JS, boolean must be true to continue with code. That's why we do the opposite of !false here// check if prop 'a', 'b',...exists
-        const item = array1[i];
-        map[item] = true;
-        }
-      }
-      console.log(map);
+function containsCommonItem2(array1, array2) {
+  // loop through first array and create obj where properties === items in the array
+let map = {}; // create object
+for (let i = 0; i < array1.length; i++) {
+  if (!map[array1[i]]) { // In JS, boolean must be true to continue with code. That's why we do the opposite of !false here// check if prop 'a', 'b',...exists
+  const item = array1[i];
+  map[item] = true;
+  }
+}
+console.log(map);
 
 
-       loop through second array and check if item in second array exists in created object
+  loop through second array and check if item in second array exists in created object
 
-       for (let j = 0; j < array2.length; j++) {
-         if (map[array2[j]]) { // if map index does contain props, return true
-           return true
-         }
-       }
-       return false
-       }
+  for (let j = 0; j < array2.length; j++) {
+    if (map[array2[j]]) { // if map index does contain props, return true
+      return true
+    }
+  }
+  return false
+  }
 
-     containsCommonItem2(array1, array2); // true
+containsCommonItem2(array1, array2); // true
 ```
 
 ## Given an array, return the first recurring character
 
 ### Brute Force - Nested Loops
 
-```
-  function firstRecurringCharacter(input) {
-    for (let i = 0; i < input.length; i++) {
-      for (let j = i + 1; j < input.length; j++) { // start at 1 (j = 1) so we compare 2 to 5 in array. Skipping   1 loop
-      // we do i + 1 so we start to the right of 1
-        if (input[i] === input[j]) {
-       return input[i];
-        }
+```javascript
+function firstRecurringCharacter(input) {
+  for (let i = 0; i < input.length; i++) {
+    for (let j = i + 1; j < input.length; j++) { // start at 1 (j = 1) so we compare 2 to 5 in array. Skipping   1 loop
+    // we do i + 1 so we start to the right of 1
+      if (input[i] === input[j]) {
+      return input[i];
       }
     }
-    return undefined;
   }
+  return undefined;
+}
 
 firstRecurringCharacter([2, 5, 1, 2, 3, 5, 1, 2, 4]);
 firstRecurringCharacter([1, 2]); // undefined // Time Complexity O(n^2), Space Complexity O(1) because we're not storing any objects
@@ -402,7 +403,7 @@ firstRecurringCharacter([2,5,5,2,3,5,1,2,4]); // in this case we return 2 becaus
 
 ### Using Hash Tables/Objects
 
-```
+```javascript
 function firstRecurringCharacter2(input) {
 
 let map = {};
@@ -425,7 +426,7 @@ firstRecurringCharacter2([2,5,5,2,3,5,1,2,4]); // in this case we return 5 becau
 
 ## Capitalize the First Letter of a String
 
-```
+```javascript
 const myString = "hello world";
 
 function capitalizeFirstLetter(string) {
@@ -439,26 +440,26 @@ capitalizeFirstLetter(myString); // 'Hello world' // O(n) Time Complexity
 
 ### Using if/else Statements
 
-```
+```javascript
 function fizzBuzz (num) {
   for (let i = 1; i <= num; i++) {
     if (i % 15 === 0) {
-	  console.log('FizzBuzz');
-	} else if (i % 3 === 0) {
-		  console.log('Fizz');
-	} else if (i % 5 === 0) {
-		  console.log('Buzz');
-	} else {
-		  console.log(i);
-  	}
+    console.log('FizzBuzz');
+  } else if (i % 3 === 0) {
+    console.log('Fizz');
+  } else if (i % 5 === 0) {
+    console.log('Buzz');
+  } else {
+    console.log(i);
   }
+}
 }
 fizzBuzz(25); O(n) Time Complexity
 ```
 
 ### Using Switch Statements
 
-```
+```javascript
 function fizzBuzz2(num) {
   for (let i = 1; i <= num; i++) {
     switch(true) {
@@ -482,7 +483,7 @@ fizzBuzz2(25);
 
 ## Reverse A Singly Linked List
 
-```
+```javascript
 class LinkedList {
     constructor(value) {
         this.head = {
@@ -598,7 +599,7 @@ myLinkedList.reverse()
 
 ## Create a Doubly Linked List
 
-```
+```javascript
 class DoublyLinkedList {
   constructor(value) {
     this.head = {

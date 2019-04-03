@@ -10,31 +10,33 @@
 
 ---
 
-    function twoSum(numArray, sum) {
+```javascript
+function twoSum(numArray, sum) {
 
-      const pairs = [];
+  const pairs = [];
 
-      // check each element in array
-      for (let i = 0; i < numArray.length; i++) {
+  // check each element in array
+  for (let i = 0; i < numArray.length; i++) {
 
-        // check each other element in the array
-        for (let j = i + 1; j < numArray.length; j++) {
+    // check each other element in the array
+    for (let j = i + 1; j < numArray.length; j++) {
 
-          // determine if these two elements add up to sum
-          if (numArray[i] + numArray[j] === sum) {
-        pairs.push([numArray[i], numArray[j]]);
-          }
-
-        }
-
+      // determine if these two elements add up to sum
+      if (numArray[i] + numArray[j] === sum) {
+    pairs.push([numArray[i], numArray[j]]);
       }
-
-      // return all pairs of integers that add up to sum
-      return pairs;
 
     }
 
-    twoSum([4, 5, 1, 8], 6);
+  }
+
+  // return all pairs of integers that add up to sum
+  return pairs;
+
+}
+
+twoSum([4, 5, 1, 8], 6);
+```
 
 ### Better Solution O(n)
 
@@ -52,32 +54,34 @@
 
 ---
 
-    function twoSum(numArray, sum) {
+```javascript
+function twoSum(numArray, sum) {
 
-    const pairs = [];
-    const hashTable = {};
+const pairs = [];
+const hashTable = {};
 
-    // check each element in array
-    for (let i = 0; i < numArray.length; i++) {
-      currentNum = numArray[i];
+// check each element in array
+for (let i = 0; i < numArray.length; i++) {
+  currentNum = numArray[i];
 
-      // create a counterpart by calculating sum - current element
-      let counterpart = sum - currentNum;
+  // create a counterpart by calculating sum - current element
+  let counterpart = sum - currentNum;
 
-      // check if this number exists in hash table
-      // if so then we found a pair of numbers that add up to sum
-      if (hashTable[counterpart] !== undefined)   {
-        pairs.push([currentNum, counterpart]);
-      }
+  // check if this number exists in hash table
+  // if so then we found a pair of numbers that add up to sum
+  if (hashTable[counterpart] !== undefined)   {
+    pairs.push([currentNum, counterpart]);
+  }
 
-      // add the current number to the hash table
-    hashTable[currentNum] = currentNum;
+  // add the current number to the hash table
+hashTable[currentNum] = currentNum;
 
-    }
+}
 
-    // return all pairs of integers that sum to S
-    return pairs;
+// return all pairs of integers that sum to S
+return pairs;
 
-    }
+}
 
-    twoSum([4, 5, 1, 8], 6);
+twoSum([4, 5, 1, 8], 6);
+```
