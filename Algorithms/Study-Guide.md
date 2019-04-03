@@ -189,6 +189,21 @@ var isPalindrome = function(nums) {
 isPalindrome(121); //true
 ```
 
+### Is Palindrome using Filter Method
+
+```javascript
+
+const isPalindrome = (str) => {
+   str = str.toLowerCase()
+  .split('')
+  .filter(str => str >= 'a' && str <= 'z')
+  .join('');
+
+  return str === str.split('').reverse().join('');
+};
+isPalindrome(`Madam I'm Adam`);
+```
+
 ### Is Palindrome with Integers without using API libraries (faster runtime)
 
 ```javascript
