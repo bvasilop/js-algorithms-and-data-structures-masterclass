@@ -214,28 +214,27 @@ isPalindrome(121); //true
 ### Hash Tables
 
 ```javascript
-function validAnagram(first, second) {
+function isAnagram(first, second) {
   if (first.length !== second.length) {
     return false;
   }
-
   const lookup = {};
-
   for (let i = 0; i < first.length; i++) {
     let currentLetter = first[i];
-    lookup[currentLetter] ? lookup[currentLetter] += 1 : lookup[currentLetter] = 1;
-  }
+    !lookup[currentLetter] ? lookup[currentLetter] = 1 : ++lookup[currentLetter];
 
+  }
   for (let j = 0; j < second.length; j++) {
     let currentLetter = second[j];
     if (!lookup[currentLetter]) {
-      (lookup[currentLetter] -= 1)
+      return false;
+      } else {
+      lookup[currentLetter] -= 1;
     }
   }
   return true;
 }
-
-validAnagram('anagram', 'nagaram'); // true // O(n) Time complexity
+isAnagram('anagram','nagarad'); // true // O(n) Time complexity
 ```
 
 ## Return Reversed Array in PLace
