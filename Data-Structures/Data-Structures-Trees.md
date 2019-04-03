@@ -22,3 +22,11 @@
 
 * Each node can only have either 0, 1, or 2 nodes and each child can only have one parent.
 * Each node represents a certain state.
+
+```javascript
+function BinaryTreeNode(value) {
+  this.value = value;
+  this.left = null;
+  this.right = null;
+}
+```

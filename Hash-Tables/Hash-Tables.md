@@ -2,13 +2,13 @@
 
 ## Hash Tables are known as Objects in JavaScript
 
-* Known as hash maps, maps, unordered maps, dictionaries, objects
+* Known as **hash maps**, **maps**, **unordered maps**, **dictionaries**, **objects**
 
-* Known as dictionaries in Python
+* Known as dictionaries in **Python**
 
-* Known as maps in Java
+* Known as maps in **Java**
 
-* Known as hashes in Ruby
+* Known as hashes in **Ruby**
 
 * Common interview questions
 
@@ -53,9 +53,9 @@
 * Two common ways of dealing with collisions
     Linked Lists, Separate Chaining, Open addressing
 
-    [Wiki Hash Tables](https://en.wikipedia.org/wiki/Hash_table)
+    **[Wiki Hash Tables](https://en.wikipedia.org/wiki/Hash_table)**
 
-    [Hash Table Animation](https://www.cs.usfca.edu/~galles/visualization/OpenHash.html)
+    **[Hash Table Animation](https://www.cs.usfca.edu/~galles/visualization/OpenHash.html)**
 
 ### Upside to Using Hash Tables
 

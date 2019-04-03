@@ -27,13 +27,14 @@
 * One that might appear often is the logarithm
   1. Logarithm is the inverse of exponentiation. So just like division and multiplication are a pair logarithms and exponent exponentiation are a pair.
 
-          log  log base 2 of 8 equals 3
-          log₂(8) = 3 => 2³ = 8
-          log₂(value) = exponent => 2(exponent) = value
+```javascript
+log  log base 2 of 8 equals 3
+log₂(8) = 3 => 2³ = 8
+log₂(value) = exponent => 2(exponent) = value
 
-          We'll omit the 2 from log₂ because of formatting
-          log === log₂
-
+//We'll omit the 2 from log₂ because of formatting
+//log === log₂
+```
 ### Rule of thumb
 
 * The logarithm of a number roughly measures the number of times you can divide that number by 2 before you get a value that's less than or equal to one.
@@ -80,14 +81,15 @@
 
 * Reference types are generally O(n), where n is the length (for arrays) or the number of keys (for objects)
 
-      function sum(arr) {
-        let total = 0;
-          for (let i = 0; i < arr.length; i++) {
-            total += arr[i]; // adding in each item in the array to the total variable
-          }
-      return total
-      }
-      sum([2, 4, 6]);  => 12
+```javascript
+function sum(arr) {
+  let total = 0;
+    for (let i = 0; i < arr.length; i++) {
+      total += arr[i]; // adding in each item in the array to the total variable
+    }
+return total
+}
+sum([2, 4, 6]);  => 12
 ---
 
       function double(arr) {
@@ -98,6 +100,7 @@
         return newArr;
       }
       double([2, 4]);  => [ 4, 8 ]
+```
 
 * As the array length grows in proportion to the length of the input, the space is directly proportional to the (n) input O(n) Space
 
@@ -109,50 +112,52 @@
 
 ### *Log all pairs of an array*
 
-    const boxes = [1 ,2, 3, 4, 5];
+```javascript
+```const boxes = [1 ,2, 3, 4, 5];
 
 
-    function allPairsOfArray(array) {
-      for (let i = 0; i < array.length; i++) {
-        for (let j = 0; j < array.length; j++) {
-        console.log(array[i], array[j]);
-        }
-      }
+function allPairsOfArray(array) {
+  for (let i = 0; i < array.length; i++) {
+    for (let j = 0; j < array.length; j++) {
+    console.log(array[i], array[j]);
     }
+  }
+}
 
-    allPairsOfArray(boxes);
+allPairsOfArray(boxes);
+```
 
----
+```javascript
+const arrayOfLetters = ['a', 'b', 'c',  'd', 'e'];
 
-    const arrayOfLetters = ['a', 'b', 'c',  'd', 'e'];
-
-    function logAllPairs(array) {
-      for (let i = 0; i < array.length; i++) {
-        for (let j = 0; j < array.length; j++) {
-          console.log(array[i], array[j]);
-        }
-      }
+function logAllPairs(array) {
+  for (let i = 0; i < array.length; i++) {
+    for (let j = 0; j < array.length; j++) {
+      console.log(array[i], array[j]);
     }
+  }
+}
 
-    logAllPairs(arrayOfLetters);
+logAllPairs(arrayOfLetters);
 
-    // Becomes O(n * n) === O(n^2)
-
----
+// Becomes O(n * n) === O(n^2)
+```
 
 ### O(n * n) === O(n^2)
 
 ### *Different terms for different inputs*
 
-    function compressBoxesTwice(boxes, boxes2) {
-      boxes.forEach(function(boxes) {
-        console.log(boxes);
-      });
+```javascript
+function compressBoxesTwice(boxes, boxes2) {
+  boxes.forEach(function(boxes) {
+    console.log(boxes);
+  });
 
-      boxes2.forEach(function(boxes) {
-      console.log(boxes);
-      });
-    }
+  boxes2.forEach(function(boxes) {
+  console.log(boxes);
+  });
+}
+```
 
 ### O(a + b) any step that happens in the same indentation
 

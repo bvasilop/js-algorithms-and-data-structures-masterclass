@@ -47,9 +47,9 @@
 
 ### How do we create a stack data structure that has peak, push and pop?
 
-[Udemy course video](https://www.udemy.com/master-the-coding-interview-data-structures-algorithms/learn/v4/t/lecture/12333106?start=0)
+**[Udemy course video](https://www.udemy.com/master-the-coding-interview-data-structures-algorithms/learn/v4/t/lecture/12333106?start=0)**
 
-```
+```javascript
 class Node {
   constructor(value){
     this.value = value;
@@ -112,9 +112,9 @@ myStack.pop();
 
 ### How do we create a stack data structure that implements array methods?
 
-[Udemy course video](https://www.udemy.com/master-the-coding-interview-data-structures-algorithms/learn/v4/t/lecture/12334318?start=0)
+**[Udemy course video](https://www.udemy.com/master-the-coding-interview-data-structures-algorithms/learn/v4/t/lecture/12334318?start=0)**
 
-```
+```javascript
 class Stack {
   constructor(){
     this.array = []; // create empty array
@@ -150,10 +150,10 @@ myStack.pop();
 
 ### How do we implement a queue data structure?
 
-[Udemy course video](https://www.udemy.com/master-the-coding-interview-data-structures-algorithms/learn/v4/t/lecture/12334450?start=0)
+**[Udemy course video](https://www.udemy.com/master-the-coding-interview-data-structures-algorithms/learn/v4/t/lecture/12334450?start=0)**
 
 
-```
+```javascript
 class Node {
   constructor(value) {
     this.value = value;

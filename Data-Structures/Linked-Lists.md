@@ -70,254 +70,256 @@
 * Is a reference to another place in memory or another object or another node
 
 ---
+```javascript
+const basket = ['apples', 'grapes', 'pears'];
+// how do we create a basket that's not an array but instead a linked list
 
-    const basket = ['apples', 'grapes', 'pears'];
-    // how do we create a basket that's not an array but instead a linked list
+// linked list: apples(8947) --> grapes(8742) --> pears(372) --> null (--> signifies pointers)(Parentheses signifies memory space or location)
 
-    // linked list: apples(8947) --> grapes(8742) --> pears(372) --> null (--> signifies pointers)(Parentheses signifies memory space or location)
-
-    // Why could Linked Lists be better than arrays or hash tables
+// Why could Linked Lists be better than arrays or hash tables
 ---
 
-    let obj1 = { a: true };
-    let obj2 = obj1 // we've created a pointer. A reference to an object. The object here is not being copied but instead referenced
+let obj1 = { a: true };
+let obj2 = obj1 // we've created a pointer. A reference to an object. The object here is not being copied but instead referenced
 
 
-    console.log(obj1); // { a: true }
-    console.log(obj2); // { a: true }
+console.log(obj1); // { a: true }
+console.log(obj2); // { a: true }
 
-    obj1.a = 'boo';
-    delete obj1; // even though we tried to delete. since it's still being referenced somewhere it is still held in memory because there is still a pointer to a location in memory (garbage collection -memory is managed automatically) If nothing is being pointed to it it is deleted.
-    In low level programming languages, you have to manually manage referenced items in memory
+obj1.a = 'boo';
+delete obj1; // even though we tried to delete. since it's still being referenced somewhere it is still held in memory because there is still a pointer to a location in memory (garbage collection -memory is managed automatically) If nothing is being pointed to it it is deleted.
+In low level programming languages, you have to manually manage referenced items in memory
 
-    console.log(obj1); // { a: boo }
-    console.log(obj2); // { a: boo }
+console.log(obj1); // { a: boo }
+console.log(obj2); // { a: boo }
+```
 
 ### Linked List
 
 #### 1-->10-->5–->16
-
-    let myLinkedList = { // think of a node as a bucket of data. in this case our node is our object to put our data
-      head: {
-        value: 10, // value of the node
-        next: {
-          value: 5,
-          next: {
-            value: 16, // references tail
-            next: null // end of list // null terminated
-          }
-        } // the pointer or reference to next node which in this case is another object
+```javascript
+let myLinkedList = { // think of a node as a bucket of data. in this case our node is our object to put our data
+  head: {
+    value: 10, // value of the node
+    next: {
+      value: 5,
+      next: {
+        value: 16, // references tail
+        next: null // end of list // null terminated
       }
-    }
-
----
-
+    } // the pointer or reference to next node which in this case is another object
+  }
+}
 1-->10-->5–->16
+```
 
-    class Node { // creating class for new Nodes (OOP) // creates a node with a value and next property
-      constructor(value) {
-      this.value = value;
-      this.next = null;
-      }
+```javascript
+class Node { // creating class for new Nodes (OOP) // creates a node with a value and next property
+  constructor(value) {
+  this.value = value;
+  this.next = null;
+  }
+}
+
+class LinkedList {
+  constructor(value) {
+    this.head = {
+    value: value,
+    next: null // because we're instantiating the class first
+    };
+    this.tail = this.head;
+    this.length = 1;
+  }
+
+  append(value) {
+    const newNode = new Node(value); // instantiate new Node from class
+    // const newNode = {
+    //   value: value,
+    //   next: null
+    // };
+    this.tail.next = newNode; // grabs next value and pointer and point to newNode
+    this.tail = newNode; // update tail to be the new node
+    this.length++; // we add the length to equal 2 (nodes)
+    return this; // so we get back our linked list
     }
 
-    class LinkedList {
-      constructor(value) {
-        this.head = {
-        value: value,
-        next: null // because we're instantiating the class first
-        };
-        this.tail = this.head;
-        this.length = 1;
-      }
-
-      append(value) {
-        const newNode = new Node(value); // instantiate new Node from class
-        // const newNode = {
-        //   value: value,
-        //   next: null
-        // };
-        this.tail.next = newNode; // grabs next value and pointer and point to newNode
-        this.tail = newNode; // update tail to be the new node
-        this.length++; // we add the length to equal 2 (nodes)
-        return this; // so we get back our linked list
-        }
-
-        prepend(value) {
-          //const newNode = new Node(value); // instantiate new Node from class
-          const newNode = { // create empty node
-            value: value,
-            next: null
-          };
-          newNode.next = this.head; // we just created pointer to head
-          this.head = newNode; // update the reference
-          this.length++; // increase length of our list
-          return this;
-        }
-
-          printList() { // lists our linked list in   an array
-          const array = [];
-          let currentNode = this.head;
-          while (currentNode !== null) {// while this condition is happening, run the commands below // while loops are good if we don't know the length of something
-          array.push(currentNode.value);
-          currentNode = currentNode.next; // update current to currentNode.next
-          }
-          return array;
-        }
-
-        insert(index, value) { // insert at this location, this value //insert is O(n) because of looping
-        if (index >= this.length) { // check parameters // if ... add to end of list
-        return this.append(value); // add to end of list
-        }
-        const newNode = {
+    prepend(value) {
+      //const newNode = new Node(value); // instantiate new Node from class
+      const newNode = { // create empty node
         value: value,
         next: null
-        };
-        const leader = this.traverseToIndex(index-1); // points to leader
-        const holdingPointer = leader.next; // number 5 from array is referenced in this variable
-        leader.next = newNode; // now we can update leader.next to point to new node
-        newNode.next = holdingPointer; // reassign new pointer
-        this.length++;
-        return this.printList(); // => [ 1, 10, 99, 5, 16 ]
-        }
+      };
+      newNode.next = this.head; // we just created pointer to head
+      this.head = newNode; // update the reference
+      this.length++; // increase length of our list
+      return this;
+    }
 
-        traverseToIndex(index) { // we must traverse list to find index for adding element. Linked List only has reference to this.head and this.tail
-        //check for parameters if you want // traversal is O(n) because of looping
-        let counter = 0;
-        let currentNode = this.head;
-        while (counter !== index) {// as soon as we get to the index we want, stop
-        currentNode = currentNode.next; // until then traverse through list
-        counter++;
-        }
-        return currentNode; // returns current node which is 10 --we grabbed a reference to the leader -- now hold pointer for next item (5)
-        }
+      printList() { // lists our linked list in   an array
+      const array = [];
+      let currentNode = this.head;
+      while (currentNode !== null) {// while this condition is happening, run the commands below // while loops are good if we don't know the length of something
+      array.push(currentNode.value);
+      currentNode = currentNode.next; // update current to currentNode.next
+      }
+      return array;
+    }
 
-        remove(index) {
-        // check params if u want
-        const leader = this.traverseToIndex(index-1); // we want to make sure that we remove the 10 to 99 pointer and instead point 10 to 5. due to garbage collection, as soo as 99 is removed, it is deleted from memory
-        const unwantedNode = leader.next; // create a reference to 5 --[ 1, 10, 99, 5, 16, 88 ]
-        leader.next = unwantedNode.next; // reassign new leader pointer
-        this.length--;
-        return this.printList(); // delete is O(n)
-        }
-        }
+    insert(index, value) { // insert at this location, this value //insert is O(n) because of looping
+    if (index >= this.length) { // check parameters // if ... add to end of list
+    return this.append(value); // add to end of list
+    }
+    const newNode = {
+    value: value,
+    next: null
+    };
+    const leader = this.traverseToIndex(index-1); // points to leader
+    const holdingPointer = leader.next; // number 5 from array is referenced in this variable
+    leader.next = newNode; // now we can update leader.next to point to new node
+    newNode.next = holdingPointer; // reassign new pointer
+    this.length++;
+    return this.printList(); // => [ 1, 10, 99, 5, 16 ]
+    }
 
-        reverse() {
-        if (this.head.next
-        }
-        /*  *    *   reassigning pointers for nodes
-            \ /
-             *
-       */
+    traverseToIndex(index) { // we must traverse list to find index for adding element. Linked List only has reference to this.head and this.tail
+    //check for parameters if you want // traversal is O(n) because of looping
+    let counter = 0;
+    let currentNode = this.head;
+    while (counter !== index) {// as soon as we get to the index we want, stop
+    currentNode = currentNode.next; // until then traverse through list
+    counter++;
+    }
+    return currentNode; // returns current node which is 10 --we grabbed a reference to the leader -- now hold pointer for next item (5)
+    }
 
-    const myLinkedList = new LinkedList(10);
-    myLinkedList.append(5); // => LinkedList {
-    //   head: { value: 10, next: { value: 5, next: null } },
-    //   tail: { value: 5, next: null },
-    //   length: 2 }
+    remove(index) {
+    // check params if u want
+    const leader = this.traverseToIndex(index-1); // we want to make sure that we remove the 10 to 99 pointer and instead point 10 to 5. due to garbage collection, as soo as 99 is removed, it is deleted from memory
+    const unwantedNode = leader.next; // create a reference to 5 --[ 1, 10, 99, 5, 16, 88 ]
+    leader.next = unwantedNode.next; // reassign new leader pointer
+    this.length--;
+    return this.printList(); // delete is O(n)
+    }
+    }
 
-    myLinkedList.append(16);//  => LinkedList {
-    //   head: { value: 10, next: { value: 5, next: [Object] } },
-    //   tail: { value: 16, next: null },
-    //   length: 3 }
-    //console.log(myLinkedList);
-    myLinkedList.prepend(1); // => LinkedList {
-    //   head: { value: 1, next: null },
-    //   tail: { value: 16, next: null },
-    //   length: 4 }
-    myLinkedList.printList(); // => [ 1, 10, 99, 5, 16 ]
-    myLinkedList.insert(2, 99); // // 1-->10-->99-->5–->16
-    myLinkedList.insert(20,88) // added at index 20(doesn't exist) so added at end of list
-    myLinkedList.printList(); // added printList because of append if() check // => [ 1, 10, 99, 5, 16, 88 ]
-    myLinkedList.remove(2); // goes from => [ 1, 10, 99, 5, 16, 88 ] to => [ 1, 10, 5, 16, 88 ]
+    reverse() {
+    if (this.head.next
+    }
+    /*  *    *   reassigning pointers for nodes
+        \ /
+          *
+    */
+```
+```javascript
+const myLinkedList = new LinkedList(10);
+myLinkedList.append(5); // => LinkedList {
+//   head: { value: 10, next: { value: 5, next: null } },
+//   tail: { value: 5, next: null },
+//   length: 2 }
 
----
+myLinkedList.append(16);//  => LinkedList {
+//   head: { value: 10, next: { value: 5, next: [Object] } },
+//   tail: { value: 16, next: null },
+//   length: 3 }
+//console.log(myLinkedList);
+myLinkedList.prepend(1); // => LinkedList {
+//   head: { value: 1, next: null },
+//   tail: { value: 16, next: null },
+//   length: 4 }
+myLinkedList.printList(); // => [ 1, 10, 99, 5, 16 ]
+myLinkedList.insert(2, 99); // // 1-->10-->99-->5–->16
+myLinkedList.insert(20,88) // added at index 20(doesn't exist) so added at end of list
+myLinkedList.printList(); // added printList because of append if() check // => [ 1, 10, 99, 5, 16, 88 ]
+myLinkedList.remove(2); // goes from => [ 1, 10, 99, 5, 16, 88 ] to => [ 1, 10, 5, 16, 88 ]
+```
 
 ## Doubly Linked Lists
 
-    class DoublyLinkedList {
-      constructor(value) {
-        this.head = {
-          value: value,
-          next: null,
-          prev: null // main difference with singly linked list is previous property
-        };
-        this.tail = this.head;
-        this.length = 1;
-      }
-      append(value) {
-        const newNode = {
-          value: value,
-          next: null,
-          prev: null // main difference with singly linked list is previous property
-        }
-        console.log(newNode)
-        newNode.prev = this.tail // add a prev property to equal whatever's at the end of the original list
-        this.tail.next = newNode;
-        this.tail = newNode;
-        this.length++;
-        return this;
-      }
-      prepend(value) {
-        const newNode = {
-          value: value,
-          next: null,
-          prev: null // main difference with singly linked list is previous property
-        }
-        newNode.next = this.head;
-        this.head.prev = newNode // add a prev property to equal whatever's at the end of the original
-        this.head = newNode;
-        this.length++;
-        return this;
-      }
-      printList() {
-        const array = [];
-        let currentNode = this.head;
-        while(currentNode !== null){
-          array.push(currentNode.value)
-          currentNode = currentNode.next
-        }
-        return array;
-      }
-      insert(index, value){
-        //Check for proper parameters;
-        if(index >= this.length) {
-          return this.append(value);
-        }
-
-        const newNode = {
-          value: value,
-          next: null,
-          prev: null // main difference with singly linked list is previous property
-        }
-        const leader = this.traverseToIndex(index-1);
-        const follower = leader.next; // must grab reference to leader
-        leader.next = newNode; // get leader to point to the new node
-        newNode.prev = leader; // add a prev property to equal whatevers at the end of the original // new node now points to the leader
-        newNode.next = follower; // must grab reference to follower // new node now points after it to the follower
-        follower.prev = newNode; // follower is now going to point to the new node
-        this.length++;
-        console.log(this)
-        return this.printList();
-      }
-      traverseToIndex(index) {
-        //Check parameters
-        let counter = 0;
-        let currentNode = this.head;
-        while(counter !== index){
-          currentNode = currentNode.next;
-          counter++;
-        }
-        return currentNode;
-      }
+```javascript
+class DoublyLinkedList {
+  constructor(value) {
+    this.head = {
+      value: value,
+      next: null,
+      prev: null // main difference with singly linked list is previous property
+    };
+    this.tail = this.head;
+    this.length = 1;
+  }
+  append(value) {
+    const newNode = {
+      value: value,
+      next: null,
+      prev: null // main difference with singly linked list is previous property
+    }
+    console.log(newNode)
+    newNode.prev = this.tail // add a prev property to equal whatever's at the end of the original list
+    this.tail.next = newNode;
+    this.tail = newNode;
+    this.length++;
+    return this;
+  }
+  prepend(value) {
+    const newNode = {
+      value: value,
+      next: null,
+      prev: null // main difference with singly linked list is previous property
+    }
+    newNode.next = this.head;
+    this.head.prev = newNode // add a prev property to equal whatever's at the end of the original
+    this.head = newNode;
+    this.length++;
+    return this;
+  }
+  printList() {
+    const array = [];
+    let currentNode = this.head;
+    while(currentNode !== null){
+      array.push(currentNode.value)
+      currentNode = currentNode.next
+    }
+    return array;
+  }
+  insert(index, value){
+    //Check for proper parameters;
+    if(index >= this.length) {
+      return this.append(value);
     }
 
-    let myLinkedList = new DoublyLinkedList(10);
-    myLinkedList.append(5)
-    myLinkedList.append(16)
-    myLinkedList.prepend(1)
-    myLinkedList.insert(2, 99)
-    //myLinkedList.insert(20, 88)
-    myLinkedList.printList()
-    // myLinkedList.remove(2)
-    // myLinkedList.reverse()
+    const newNode = {
+      value: value,
+      next: null,
+      prev: null // main difference with singly linked list is previous property
+    }
+    const leader = this.traverseToIndex(index-1);
+    const follower = leader.next; // must grab reference to leader
+    leader.next = newNode; // get leader to point to the new node
+    newNode.prev = leader; // add a prev property to equal whatevers at the end of the original // new node now points to the leader
+    newNode.next = follower; // must grab reference to follower // new node now points after it to the follower
+    follower.prev = newNode; // follower is now going to point to the new node
+    this.length++;
+    console.log(this)
+    return this.printList();
+  }
+  traverseToIndex(index) {
+    //Check parameters
+    let counter = 0;
+    let currentNode = this.head;
+    while(counter !== index){
+      currentNode = currentNode.next;
+      counter++;
+    }
+    return currentNode;
+  }
+}
+
+let myLinkedList = new DoublyLinkedList(10);
+myLinkedList.append(5)
+myLinkedList.append(16)
+myLinkedList.prepend(1)
+myLinkedList.insert(2, 99)
+//myLinkedList.insert(20, 88)
+myLinkedList.printList()
+// myLinkedList.remove(2)
+// myLinkedList.reverse()
+```
