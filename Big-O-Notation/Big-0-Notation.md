@@ -91,16 +91,17 @@ function sum(arr) {
 return total
 }
 sum([2, 4, 6]);  => 12
----
+```
 
-      function double(arr) {
-        let newArr = [];
-          for (let i = 0; i < arr.length; i++){
-            newArr.push(2 * arr[i]);
-          }
-        return newArr;
-      }
-      double([2, 4]);  => [ 4, 8 ]
+```javascript
+function double(arr) {
+  let newArr = [];
+    for (let i = 0; i < arr.length; i++){
+      newArr.push(2 * arr[i]);
+    }
+  return newArr;
+}
+double([2, 4]);  => [ 4, 8 ]
 ```
 
 * As the array length grows in proportion to the length of the input, the space is directly proportional to the (n) input O(n) Space
