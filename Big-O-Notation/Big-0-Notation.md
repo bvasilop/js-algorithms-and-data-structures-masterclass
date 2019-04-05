@@ -27,7 +27,7 @@
 * One that might appear often is the logarithm
   1. Logarithm is the inverse of exponentiation. So just like division and multiplication are a pair logarithms and exponent exponentiation are a pair.
 
-```javascript
+```none
 log  log base 2 of 8 equals 3
 log₂(8) = 3 => 2³ = 8
 log₂(value) = exponent => 2(exponent) = value
@@ -35,6 +35,7 @@ log₂(value) = exponent => 2(exponent) = value
 //We'll omit the 2 from log₂ because of formatting
 //log === log₂
 ```
+
 ### Rule of thumb
 
 * The logarithm of a number roughly measures the number of times you can divide that number by 2 before you get a value that's less than or equal to one.
@@ -113,7 +114,7 @@ sum([2, 4, 6]);  => 12
 ### *Log all pairs of an array*
 
 ```javascript
-```const boxes = [1 ,2, 3, 4, 5];
+const boxes = [1 ,2, 3, 4, 5];
 
 
 function allPairsOfArray(array) {
