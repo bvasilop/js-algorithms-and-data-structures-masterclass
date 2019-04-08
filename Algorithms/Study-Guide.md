@@ -252,6 +252,26 @@ function isAnagram(first, second) {
 isAnagram('anagram','nagarad'); // true // O(n) Time complexity
 ```
 
+```javascript
+const isAnagram = (first, second) => {
+  if(first.length !== second.length) {
+    return false;
+  }
+const lookup = {};
+  for (let currentLetter of first) {
+    !lookup[currentLetter] ? lookup[currentLetter] = 1 : ++lookup[currentLetter];
+  }
+  for (let currentLetter of second) {
+    if (!lookup[currentLetter]) {
+      return false;
+  }
+    --lookup[currentLetter];
+}
+return true;
+};
+isAnagram('anagram', 'nagaram'); // true // O(n) Time complexity
+```
+
 ## Return Reversed Array in PLace
 
 ```javascript

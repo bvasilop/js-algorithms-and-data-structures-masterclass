@@ -18,8 +18,10 @@
 * [Abstract Syntax Tree Wiki](https://en.wikipedia.org/wiki/Abstract_syntax_tree)
 
 ## Binary Trees
+
 ![BinaryTrees](./Binary-Trees.png?raw=true "Binary-Trees")
 
+* Binary search trees are very good at searching and great for comparing things.
 * Each node can only have either 0, 1, or 2 nodes and each child can only have one parent.
 * Each node represents a certain state.
 
