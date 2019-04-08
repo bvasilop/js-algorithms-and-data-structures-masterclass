@@ -125,6 +125,8 @@ twoSum([2, 4, 6, 8], 10); // => [ [ 2, 8 ], [ 4, 6 ] ] // O(n^2) Time Complexity
 
 ### Hash Tables
 
+#### Using traditional for loop
+
 ```javascript
 function twoSum2(arr, sum) {
 
@@ -147,6 +149,24 @@ function twoSum2(arr, sum) {
 }
 
 twoSum2([2, 4, 6, 8], 10) // => [ [ 6, 4 ], [ 8, 2 ] ] // O(n) Time Complexity
+```
+
+#### Using for of loop
+
+```javascript
+const twoSum = (arr, sum) => {
+  const map = {};
+  const pairs = [];
+    for (let currentNum of arr) {
+      let counterpart = sum - currentNum;
+      if (map[counterpart] !== undefined) {
+        pairs.push([currentNum, counterpart]);
+      }
+      map[currentNum] = currentNum;
+    }
+    return pairs;
+};
+twoSum([2, 8, 3, 4], 10); // => [2, 8]
 ```
 
 #### Return indexes
