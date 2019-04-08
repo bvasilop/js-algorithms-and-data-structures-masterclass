@@ -362,6 +362,25 @@ function mostFrequentChar() {
 mostFrequentChar(); // 'l' // O(n) Time Complexity
 ```
 
+#### Using for of loop instead of traditional for loop
+
+```javascript
+const mostFrequentChar = (str) => {
+  str = str.toLowerCase().split('');
+
+  const map = {};
+  let mostFrequentEl = str[0];
+    for (let currentLetter of str) {
+      !map[currentLetter] ? map[currentLetter] = 1 : ++map[currentLetter];
+        if(map[currentLetter] > map[mostFrequentEl]) {
+          mostFrequentEl = currentLetter;
+        }
+    }
+    return mostFrequentEl;
+};
+mostFrequentChar('Hello World'); // 'l'
+```
+
 ## Count Unique Values in a Sorted Array
 
 ### Nested Loops
