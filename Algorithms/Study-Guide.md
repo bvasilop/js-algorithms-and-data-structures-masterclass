@@ -228,6 +228,8 @@ isPalindrome(121); //true
 
 ### Hash Tables
 
+#### Standard for loop
+
 ```javascript
 function isAnagram(first, second) {
   if (first.length !== second.length) {
@@ -249,8 +251,10 @@ function isAnagram(first, second) {
   }
   return true;
 }
-isAnagram('anagram','nagarad'); // true // O(n) Time complexity
+isAnagram('anagram','nagaram'); // true // O(n) Time complexity
 ```
+
+#### For of loop
 
 ```javascript
 const isAnagram = (first, second) => {
