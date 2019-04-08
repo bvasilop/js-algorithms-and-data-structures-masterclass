@@ -149,6 +149,22 @@ function twoSum2(arr, sum) {
 twoSum2([2, 4, 6, 8], 10) // => [ [ 6, 4 ], [ 8, 2 ] ] // O(n) Time Complexity
 ```
 
+#### Return indexes
+
+```javascript
+const twoSum = (nums, target) => {
+  const map = {};
+    for (num of nums) {
+    let counterpart = target - num;
+    if(map[counterpart] !== undefined) {
+      return [nums.indexOf(counterpart), nums.indexOf(num)];
+    }
+    map[num] = num;
+  }
+};
+twoSum([1, 6, 4 , 5, 3, 3], 7); // [ 0, 1 ]
+```
+
 ## Is Palindrome
 
 ### Store in Array
