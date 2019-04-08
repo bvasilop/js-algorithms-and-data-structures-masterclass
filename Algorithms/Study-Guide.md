@@ -340,26 +340,23 @@ function returnArrayinPlace(arr) {
 ### Hash Tables
 
 ```javascript
-const str = 'Hello World'.toLowerCase().split('');
-
-function mostFrequentChar() {
-
+function mostFrequentChar(str) {
+  str = str.toLowerCase().split('');
  const map = {};
  let mostFrequentEl = str[0];
 
  for (let i = 0; i < str.length; i++) {
-   let currentEl = str[i];
+   let currentLetter = str[i];
 
-    !map[currentEl] ? map[currentEl] = 1 : ++map[currentEl];
+    !map[currentLetter] ? map[currentLetter] = 1 : ++map[currentLetter];
 
-    if (map[currentEl] > map[mostFrequentEl]) {
-      mostFrequentEl = currentEl;
+    if (map[currentLetter] > map[mostFrequentEl]) {
+      mostFrequentEl = currentLetter;
     }
  }
  return mostFrequentEl;
  }
-
-mostFrequentChar(); // 'l' // O(n) Time Complexity
+mostFrequentChar('Hello World'); // 'l' // O(n) Time Complexity
 ```
 
 #### Using for of loop instead of traditional for loop
