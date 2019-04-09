@@ -412,7 +412,7 @@ const mostCommon = (arr) => {
      return null;
  }
     const map = {};
-    let mostFrequentNum = [arr[0]];
+    let mostFrequentNum = arr[0];
     for (let i = 0; i < arr.length; i++) {
       let numsArray = [];
       let currentNum = arr[i];
