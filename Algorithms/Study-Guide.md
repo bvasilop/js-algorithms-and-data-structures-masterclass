@@ -405,7 +405,6 @@ mostCommon(arr); // return 3
 ### Most common integer returned in array
 
 ```javascript
-// /// with arrays
 const arr = [1,1,2,3,3,3,3,4,5,5,10]; // return [ 3 ]
 
 const mostCommon = (arr) => {
