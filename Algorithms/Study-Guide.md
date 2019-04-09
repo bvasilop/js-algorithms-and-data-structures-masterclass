@@ -377,6 +377,29 @@ const mostFrequentChar = (str) => {
 };
 mostFrequentChar('Hello World'); // 'l'
 ```
+### Given a List of Integers, find the most frequently occurring integer in the list
+
+```javascript
+const arr = [1,1,2,3,3,3,3,4,5,5,10]; // return [ 3 ]
+
+const mostCommon = (arr) => {
+ if (arr.length < 1 ) {
+     return null;
+ }
+    const map = {};
+    let mostFrequentNum = arr[0];
+    for (let i = 0; i < arr.length; i++) {
+      let currentNum = arr[i];
+        !map[currentNum] ? map[currentNum] = 1 : ++map[currentNum];
+        // 1. Current has higher count than known max
+        if(map[currentNum] > map[mostFrequentNum]) {
+        mostFrequentNum = currentNum;
+       }
+    }
+    return mostFrequentNum;
+};
+mostCommon(arr); // return 3
+```
 
 ## Count Unique Values in a Sorted Array
 
