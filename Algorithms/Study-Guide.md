@@ -383,7 +383,7 @@ mostFrequentChar('Hello World'); // 'l'
 ```javascript
 const arr = [1,1,2,3,3,3,3,4,5,5,10]; // return [ 3 ]
 
-const mostCommon = (arr) => {
+const mostCommonNum = (arr) => {
  if (arr.length < 1 ) {
      return null;
  }
@@ -399,7 +399,7 @@ const mostCommon = (arr) => {
     }
     return mostFrequentNum;
 };
-mostCommon(arr); // return 3
+mostCommonNum(arr); // return 3
 ```
 
 ## Count Unique Values in a Sorted Array
