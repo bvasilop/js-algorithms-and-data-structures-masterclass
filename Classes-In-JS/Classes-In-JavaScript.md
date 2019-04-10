@@ -27,6 +27,8 @@ object4.a(); // { a: [Function: a] }
 
 #### Used when you want to make a copy of an object
 
+* We call `super()` inside of a subclass' constructor method in order to call the parent constructor... and that's pretty much what super is in JavaScript: a reference to the parent prototype
+
 ```javascript
 class Player {
 constructor(name, type) {
