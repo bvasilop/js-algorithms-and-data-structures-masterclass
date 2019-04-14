@@ -538,6 +538,26 @@ firstRecurringCharacter2([2, 5, 1, 2, 3, 5, 1, 2, 4]); // 2 O(n) Time Complexity
 firstRecurringCharacter2([2,5,5,2,3,5,1,2,4]); // in this case we return 5 because of the way we are comparing all the values simultaneously
 ```
 
+## Implement a function to flatten deeply nested arrays
+
+### Using [Array.concat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)
+
+```javascript
+const arr = [1, 2, [3, 4], [5]];
+function flattened(arr) {
+return [].concat.apply([],arr);
+};
+flattened(arr); // => output: [1, 2, 3, 4, 5]
+```
+
+```javascript
+const arr = [1, 2, [3, 4], [5]];
+const flattened = (arr) => {
+return [].concat.apply([],arr);
+};
+flattened(arr); // => output: [1, 2, 3, 4, 5]
+```
+
 ## Capitalize the First Letter of a String
 
 ```javascript
