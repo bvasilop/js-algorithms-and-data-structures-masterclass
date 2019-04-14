@@ -558,6 +558,17 @@ return [].concat.apply([],arr);
 flattened(arr); // => output: [1, 2, 3, 4, 5]
 ```
 
+### Using [Array.flat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat)
+
+```javascript
+const arr = [1, 2, [3, 4], [5]];
+const flattened = function(arr){
+  return arr.flat();
+};
+flattened(arr); => output: [1, 2, 3, 4, 5]
+```
+
+
 ## Capitalize the First Letter of a String
 
 ```javascript
