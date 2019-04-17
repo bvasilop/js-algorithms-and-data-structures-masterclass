@@ -19,7 +19,7 @@ function reverse(str) {
 
 }
 
-reverse('wooooohoooo'); // => 'oooohooooow' // O(n) Time Complexity
+reverse('Hello'); // => 'olleh' // O(n) Time Complexity
 ```
 
 ```javascript
