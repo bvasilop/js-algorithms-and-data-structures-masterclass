@@ -665,6 +665,47 @@ function fizzBuzz2(num) {
 fizzBuzz2(25);
 ```
 
+## Common Amazon Question About Currying
+
+```javascript
+let sum = function(a) {
+  return function(b) {
+    return function(c) {
+      return function(d) {
+        return a + b + c + d;
+      };
+    };
+  };
+};
+sum(1)(2)(3)(4); // 10
+```
+
+```javascript
+let sum = function(a) {
+  return function(b) {
+    if (b) {
+      return sum(a + b);
+    }
+    return a;
+  };
+};
+sum(1)(2)(3)(4)(); // 10
+```
+
+```javascript
+let sum = function(a) {
+  return function(b) {
+    return b ? sum(a + b) : a;
+  };
+};
+sum(1)(2)(3)(4)(); // 10
+```
+
+```javascript
+let sum = a => b => (b ? sum(a + b) : a);
+sum(1)(2)(3)(4)(); // 10
+```
+
 ## Reverse A Singly Linked List
 
 ```javascript
