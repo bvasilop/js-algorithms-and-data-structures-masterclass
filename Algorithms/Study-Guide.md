@@ -172,6 +172,7 @@ twoSum2([2, 4, 6, 8], 10); // => [ [ 6, 4 ], [ 8, 2 ] ] // O(n) Time Complexity
 const twoSum = (arr, sum) => {
   const map = {};
   const pairs = [];
+
   for (let currentNum of arr) {
     let counterpart = sum - currentNum;
     if (map[counterpart] !== undefined) {
@@ -179,9 +180,13 @@ const twoSum = (arr, sum) => {
     }
     map[currentNum] = currentNum;
   }
+  if (pairs.length === 0) {
+    return 'no pairs';
+  }
   return pairs;
 };
-twoSum([2, 8, 3, 4], 10); // => [2, 8]
+
+twoSum([2, 3, 6, 1], 10);
 ```
 
 #### Return indexes
