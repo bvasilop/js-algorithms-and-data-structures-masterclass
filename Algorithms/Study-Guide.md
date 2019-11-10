@@ -189,6 +189,31 @@ const twoSum = (arr, sum) => {
 twoSum([2, 3, 6, 1], 10);
 ```
 
+#### Removing duplicates using `...new Set([])`
+
+```javascript
+const twoSum = (arr, sum) => {
+
+  const map = {};
+  const pairs = [];
+
+  for (let num of arr) {
+
+    let counterpart = sum - num;
+    !map[num] ? map[num] = 1 : ++map[num];
+    if (map[num] !== undefined) {
+
+      pairs.push([num, counterpart]);
+    }
+    map[num] = num;
+  }
+
+  return pairs;
+}
+twoSum([...new Set([2, 4, 6, 8, 4, 6, 2, 4, 4, 4, 4, 8, 8])], 10)
+
+```
+
 #### Return indexes
 
 ```javascript
