@@ -189,7 +189,7 @@ const twoSum = (arr, sum) => {
 twoSum([2, 3, 6, 1], 10);
 ```
 
-#### Removing duplicates using `...new Set([])`
+#### Removing duplicate values using `...new Set([])`
 
 ```javascript
 const twoSum = (arr, sum) => {
