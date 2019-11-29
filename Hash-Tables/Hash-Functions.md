@@ -63,7 +63,7 @@ class HashTable {
   }
 
   _hash(key) {
-    // _ this is a private property. let devs know they shouldn't be accessing this outside of private property
+    // _ this is a private property. lets devs know they shouldn't be accessing this outside of private property
     let hash = 0;
 
     for (let i = 0; i < key.length; i++) {
@@ -75,7 +75,7 @@ class HashTable {
 
         // in this case index(i) is the first index (g) from grapes--which provides a number * i (index) again to give us a unique number
 
-        // we use the modulus operator to ensure thos.data.length stays between 50 --HashTable(50)-- the size of our data --new Array(size)--
+        // we use the modulus operator to ensure this.data.length stays between 50 --HashTable(50)-- the size of our data --new Array(size)--
 
         this.data.length;
       // console.log(hash); // 0 14 8 44 48 23 // loops through grapes character by character, then generates a hash. Since hash constantly gets looped over it keeps generating hash numbers until it reaches the hash for completed grapes (23).
