@@ -58,7 +58,7 @@ const a = new Map(); // the difference between a map and an object is that a map
 ```javascript
 class HashTable {
   constructor(size) {
-    this.data = new Array(size); // this array holds our info for us // another way to instatiate an array in javascript
+    this.data = new Array(size); // this array holds our info for us // another way to instantiate an array in javascript
     // [['grapes', 10000]] // as our 'bucket' (where our data lives) for the grapes // first item in our array is an array
   }
 
@@ -108,7 +108,7 @@ class HashTable {
     if (currentBucket) {
       for (let i = 0; i < currentBucket.length; i++) {
         if (currentBucket[i][0] === key) {
-          // grab the first array then grab 0 index in the array (grapes) then next iteration grap apples and check against the key
+          // grab the first array then grab 0 index in the array (grapes) then next iteration grape apples and check against the key
           return currentBucket[i][1]; // [1] because we want to return the val 10000 // => 10000
         }
       }
@@ -137,7 +137,7 @@ const myHashTable = new HashTable(50); // 50 shelves of memory space
 //myHashTable.set('grapes', 10000); // sets grapes as first index in the array and number of grapes as the second index in the array
 
 //myHashTable._hash('grapes'); // 23 (space in memory) from 0 - 50
-//myHashTable._hash('grapess'); // 13 (space in memory) from 0 - 50
+//myHashTable._hash('grapes'); // 13 (space in memory) from 0 - 50
 
 myHashTable.set('grapes', 10000); // sets grapes as first index in the array and number of grapes as the second index in the array
 myHashTable.set('apples', 54); // => [ <1 empty item>, [ [ 'grapes', 10000 ], [ 'apples', 54 ] ] ] // two items in the same space. If we increase new Hashtable(50) we get returned just the grapes array // [ [ 'grapes', 10000 ] ]
