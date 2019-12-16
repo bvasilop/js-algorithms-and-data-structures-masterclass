@@ -303,7 +303,7 @@ var isPalindrome = function(nums) {
 isPalindrome(121); //true
 ```
 
-### Is Palindrome using Filter Method
+### Is Palindrome using `filter()`
 
 ```javascript
 const isPalindrome = str => {
@@ -321,6 +321,15 @@ const isPalindrome = str => {
       .join("")
   );
 };
+isPalindrome(`Madam I'm Adam`);
+```
+
+### Is Palindrome using `reduce()`
+
+```javascript
+function isPalindrome(str) {
+  return str.split("").reduce((rev, char) => char + rev, "") === str;
+}
 isPalindrome(`Madam I'm Adam`);
 ```
 
@@ -347,20 +356,20 @@ isPalindrome(121); //true
 ### Using `regex`
 
 ```javascript
-isPalindrome('racecar'); // true
-isPalindrome('race Car'); // true
+isPalindrome("racecar"); // true
+isPalindrome("race Car"); // true
 
 function isPalindrome(word) {
   // Replace all non-letter chars with "" and change to lowercase
-  var lettersOnly = word.toLowerCase().replace(/\s/g, '');
+  var lettersOnly = word.toLowerCase().replace(/\s/g, "");
 
   // Compare the string with the reversed version of the string
   return (
     lettersOnly ===
     lettersOnly
-      .split('')
+      .split("")
       .reverse()
-      .join('')
+      .join("")
   );
 }
 ```
@@ -399,8 +408,8 @@ isAnagram("anagram", "nagaram"); // true // O(n) Time complexity
 ### Using `sort()` `join('')`
 
 ```javascript
-var firstWord = 'Mary';
-var secondWord = 'Army';
+var firstWord = "Mary";
+var secondWord = "Army";
 
 isAnagram(firstWord, secondWord); // true
 
@@ -411,13 +420,13 @@ function isAnagram(first, second) {
 
   // Sort the strings, and join the resulting array to a string. Compare the results
   a = a
-    .split('')
+    .split("")
     .sort()
-    .join('');
+    .join("");
   b = b
-    .split('')
+    .split("")
     .sort()
-    .join('');
+    .join("");
 
   return a === b;
 }
