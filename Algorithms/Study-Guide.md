@@ -4,8 +4,8 @@
 
 ```javascript
 function reverse(str) {
-  if (!str || typeof str !== 'string' || str.length < 2) {
-    return 'please enter a valid string';
+  if (!str || typeof str !== "string" || str.length < 2) {
+    return "please enter a valid string";
   }
   str = str.toLowerCase();
   const backwards = [];
@@ -15,39 +15,39 @@ function reverse(str) {
     currentLetter = str[i];
     backwards.push(currentLetter);
   }
-  return backwards.join('');
+  return backwards.join("");
 }
 
-reverse('Hello'); // => 'olleh' // O(n) Time Complexity
+reverse("Hello"); // => 'olleh' // O(n) Time Complexity
 ```
 
 ```javascript
 const reverse2 = str
-  .split('')
+  .split("")
   .reverse()
-  .join('');
-reverse2('yipeeee'); // 'eeeepiy' // O(n) Time Complexity
+  .join("");
+reverse2("yipeeee"); // 'eeeepiy' // O(n) Time Complexity
 ```
 
 ```javascript
 const reverse3 = str =>
   str
-    .split('')
+    .split("")
     .reverse()
-    .join('');
+    .join("");
 reverse3(str); // 'eeeepiy' // O(n) Time Complexity
 ```
 
 ```javascript
-const reverse5 = str => [...str].reverse().join('');
-reverse5('yippeeeee'); //'eeeeeppiy' // O(n) Time Complexity
+const reverse5 = str => [...str].reverse().join("");
+reverse5("yippeeeee"); //'eeeeeppiy' // O(n) Time Complexity
 ```
 
 ## Reverse a String in Place
 
 ```javascript
 function reverse(str) {
-  str = str.toLowerCase().split('');
+  str = str.toLowerCase().split("");
 
   for (let i = 0; i < str.length / 2; i++) {
     let currentLetter = str[i];
@@ -55,9 +55,24 @@ function reverse(str) {
     str[i] = str[str.length - 1 - i];
     str[str.length - 1 - i] = currentLetter;
   }
-  return str.join('');
+  return str.join("");
 }
-reverse('Hello World'); // => 'dlrow olleh'
+reverse("Hello World"); // => 'dlrow olleh'
+```
+
+```javascript
+function reverse(str) {
+  let reversed = "";
+
+  for (const character of str) {
+    reversed = character + reversed;
+    // take each character and add it on to the beginning of the string let reversed =''
+    // h -> eh -> leh -> lleh -> olleh
+  }
+
+  return reversed;
+}
+reverse("hello");
 ```
 
 ## Two Sum Algorithm (Google Interview ? -- True/False)
@@ -110,11 +125,11 @@ function twoSum(arr, sum) {
   if (
     !arr ||
     !sum ||
-    typeof arr !== 'object' ||
-    typeof sum !== 'number' ||
+    typeof arr !== "object" ||
+    typeof sum !== "number" ||
     arr.length < 2
   ) {
-    return 'not a valid input';
+    return "not a valid input";
   }
 
   const pairs = [];
@@ -142,11 +157,11 @@ function twoSum2(arr, sum) {
   if (
     !arr ||
     !sum ||
-    typeof arr !== 'object' ||
-    typeof sum !== 'number' ||
+    typeof arr !== "object" ||
+    typeof sum !== "number" ||
     arr.length < 2
   ) {
-    return 'please enter valid input values';
+    return "please enter valid input values";
   }
   const pairs = [];
   const hashtable = {};
@@ -181,7 +196,7 @@ const twoSum = (arr, sum) => {
     map[currentNum] = currentNum;
   }
   if (pairs.length === 0) {
-    return 'no pairs';
+    return "no pairs";
   }
   return pairs;
 };
@@ -251,9 +266,9 @@ twoDiff([2, 6, 0, 4, 10, 6], 4); => [ [ 6, 2 ], [ 4, 0 ], [ 10, 6 ], [ 6, 2 ] ]
 ```javascript
 function isPalindrome(str) {
   const string = str.toLowerCase();
-  const charactersArr = string.split('');
+  const charactersArr = string.split("");
 
-  const validChars = 'abcdefghijklmnopqrstuvwxyz'.split('');
+  const validChars = "abcdefghijklmnopqrstuvwxyz".split("");
 
   const lettersArray = [];
 
@@ -265,7 +280,7 @@ function isPalindrome(str) {
     }
   }
 
-  return lettersArray.join('') === lettersArray.reverse().join('');
+  return lettersArray.join("") === lettersArray.reverse().join("");
 }
 
 isPalindrome(`Madam I'm Adam`); // True // O(n) Time Complexity
@@ -278,9 +293,9 @@ var isPalindrome = function(nums) {
   const reverse = parseInt(
     nums
       .toString()
-      .split('')
+      .split("")
       .reverse()
-      .join(''),
+      .join("")
   );
   return nums === reverse;
 };
@@ -294,16 +309,16 @@ isPalindrome(121); //true
 const isPalindrome = str => {
   str = str
     .toLowerCase()
-    .split('')
-    .filter(str => str >= 'a' && str <= 'z')
-    .join('');
+    .split("")
+    .filter(str => str >= "a" && str <= "z")
+    .join("");
 
   return (
     str ===
     str
-      .split('')
+      .split("")
       .reverse()
-      .join('')
+      .join("")
   );
 };
 isPalindrome(`Madam I'm Adam`);
@@ -357,7 +372,7 @@ function isAnagram(first, second) {
   }
   return true;
 }
-isAnagram('anagram', 'nagaram'); // true // O(n) Time complexity
+isAnagram("anagram", "nagaram"); // true // O(n) Time complexity
 ```
 
 #### For of loop
@@ -381,15 +396,15 @@ const isAnagram = (first, second) => {
   }
   return true;
 };
-isAnagram('anagram', 'nagaram'); // true // O(n) Time complexity
+isAnagram("anagram", "nagaram"); // true // O(n) Time complexity
 ```
 
 ## Return Reversed Array in PLace
 
 ```javascript
 function returnArrayinPlace(arr) {
-  if (!arr || typeof arr !== 'object' || arr.length < 2) {
-    return 'please enter valid input values';
+  if (!arr || typeof arr !== "object" || arr.length < 2) {
+    return "please enter valid input values";
   }
 
   for (let i = 0; i < arr.length / 2; i++) {
@@ -401,7 +416,7 @@ function returnArrayinPlace(arr) {
   return arr;
 }
 
-returnArrayinPlace(['the', 'cow', 'jumped', 'over', 'the', 'moon']);
+returnArrayinPlace(["the", "cow", "jumped", "over", "the", "moon"]);
 // => [ 'moon', 'the', 'over', 'over', 'the', 'moon' ] // O(n) Time Complexity
 ```
 
@@ -411,7 +426,7 @@ returnArrayinPlace(['the', 'cow', 'jumped', 'over', 'the', 'moon']);
 
 ```javascript
 function mostFrequentChar(str) {
-  str = str.toLowerCase().split('');
+  str = str.toLowerCase().split("");
   const map = {};
   let mostFrequentEl = str[0];
 
@@ -426,14 +441,14 @@ function mostFrequentChar(str) {
   }
   return mostFrequentEl;
 }
-mostFrequentChar('Hello World'); // 'l' // O(n) Time Complexity
+mostFrequentChar("Hello World"); // 'l' // O(n) Time Complexity
 ```
 
 #### Using for of loop instead of traditional for loop
 
 ```javascript
 const mostFrequentChar = str => {
-  str = str.toLowerCase().split('');
+  str = str.toLowerCase().split("");
 
   const map = {};
   let mostFrequentEl = str[0];
@@ -445,7 +460,7 @@ const mostFrequentChar = str => {
   }
   return mostFrequentEl;
 };
-mostFrequentChar('Hello World'); // 'l'
+mostFrequentChar("Hello World"); // 'l'
 ```
 
 ### Given a List of Integers, find the most frequently occurring integer in the list
@@ -503,8 +518,8 @@ countUniqueValues([1, 1, 1, 1, 1, 2]); // 2 // O(n^2) Time Complexity
 ### Brute Force - Nested Loop
 
 ```javascript
-const array1 = ['a', 'b', 'c', 'x'];
-const array2 = ['z', 'y', 'x'];
+const array1 = ["a", "b", "c", "x"];
+const array2 = ["z", "y", "x"];
 
 function containsCommonItem(array1, array2) {
   for (let i = 0; i < array1.length; i++) {
@@ -638,7 +653,7 @@ flattened(arr); => output: [1, 2, 3, 4, 5]
 ## Capitalize the First Letter of a String
 
 ```javascript
-const myString = 'hello world';
+const myString = "hello world";
 
 function capitalizeFirstLetter(string) {
   return myString.charAt(0).toUpperCase() + myString.slice(1);
@@ -674,13 +689,13 @@ function fizzBuzz2(num) {
   for (let i = 1; i <= num; i++) {
     switch (true) {
       case i % 15 === 0:
-        console.log('Fizzbuzz');
+        console.log("Fizzbuzz");
         break;
       case i % 3 === 0:
-        console.log('Fizz');
+        console.log("Fizz");
         break;
       case i % 5 === 0:
-        console.log('Buzz');
+        console.log("Buzz");
         break;
       default:
         console.log(i);
@@ -739,7 +754,7 @@ class LinkedList {
   constructor(value) {
     this.head = {
       value: value,
-      next: null,
+      next: null
     };
     this.tail = this.head;
     this.length = 1;
@@ -747,7 +762,7 @@ class LinkedList {
   append(value) {
     const newNode = {
       value: value,
-      next: null,
+      next: null
     };
     console.log(newNode);
     this.tail.next = newNode;
@@ -758,7 +773,7 @@ class LinkedList {
   prepend(value) {
     const newNode = {
       value: value,
-      next: null,
+      next: null
     };
     newNode.next = this.head;
     this.head = newNode;
@@ -777,13 +792,13 @@ class LinkedList {
   insert(index, value) {
     //Check for proper parameters;
     if (index >= this.length) {
-      console.log('yes');
+      console.log("yes");
       return this.append(value);
     }
 
     const newNode = {
       value: value,
-      next: null,
+      next: null
     };
     const leader = this.traverseToIndex(index - 1);
     const holdingPointer = leader.next;
@@ -858,7 +873,7 @@ class DoublyLinkedList {
     this.head = {
       value: value,
       next: null,
-      prev: null, // main difference with singly linked list is previous property
+      prev: null // main difference with singly linked list is previous property
     };
     this.tail = this.head;
     this.length = 1;
@@ -867,7 +882,7 @@ class DoublyLinkedList {
     const newNode = {
       value: value,
       next: null,
-      prev: null, // main difference with singly linked list is previous property
+      prev: null // main difference with singly linked list is previous property
     };
     console.log(newNode);
     newNode.prev = this.tail; // add a prev property to equal whatever's at the end of the original list
@@ -880,7 +895,7 @@ class DoublyLinkedList {
     const newNode = {
       value: value,
       next: null,
-      prev: null, // main difference with singly linked list is previous property
+      prev: null // main difference with singly linked list is previous property
     };
     newNode.next = this.head;
     this.head.prev = newNode; // add a prev property to equal whatever's at the end of the original
@@ -906,7 +921,7 @@ class DoublyLinkedList {
     const newNode = {
       value: value,
       next: null,
-      prev: null, // main difference with singly linked list is previous property
+      prev: null // main difference with singly linked list is previous property
     };
     const leader = this.traverseToIndex(index - 1);
     const follower = leader.next; // must grab reference to leader
