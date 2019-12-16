@@ -261,6 +261,19 @@ twoDiff([2, 6, 0, 4, 10, 6], 4); => [ [ 6, 2 ], [ 4, 0 ], [ 10, 6 ], [ 6, 2 ] ]
 
 ## Is Palindrome
 
+### Using `split()` `reverse()` `join('')` and checking equality
+
+```javascript
+function isPalindrome(str) {
+  const reversed = str
+    .split("")
+    .reverse("")
+    .join("");
+  return str === reversed;
+}
+isPalindrome(`Madam I'm Adam`); // true
+```
+
 ### Store in Array
 
 ```javascript
