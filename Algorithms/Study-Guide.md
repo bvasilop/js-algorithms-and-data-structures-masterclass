@@ -344,6 +344,27 @@ var isPalindrome = function(x) {
 isPalindrome(121); //true
 ```
 
+### Using `regex`
+
+```javascript
+isPalindrome('racecar'); // true
+isPalindrome('race Car'); // true
+
+function isPalindrome(word) {
+  // Replace all non-letter chars with "" and change to lowercase
+  var lettersOnly = word.toLowerCase().replace(/\s/g, '');
+
+  // Compare the string with the reversed version of the string
+  return (
+    lettersOnly ===
+    lettersOnly
+      .split('')
+      .reverse()
+      .join('')
+  );
+}
+```
+
 ## Is an Anagram
 
 ### Hash Tables
@@ -373,6 +394,33 @@ function isAnagram(first, second) {
   return true;
 }
 isAnagram("anagram", "nagaram"); // true // O(n) Time complexity
+```
+
+### Using `sort()` `join('')`
+
+```javascript
+var firstWord = 'Mary';
+var secondWord = 'Army';
+
+isAnagram(firstWord, secondWord); // true
+
+function isAnagram(first, second) {
+  // For case insensitivity, change both words to lowercase.
+  var a = first.toLowerCase();
+  var b = second.toLowerCase();
+
+  // Sort the strings, and join the resulting array to a string. Compare the results
+  a = a
+    .split('')
+    .sort()
+    .join('');
+  b = b
+    .split('')
+    .sort()
+    .join('');
+
+  return a === b;
+}
 ```
 
 #### For of loop
