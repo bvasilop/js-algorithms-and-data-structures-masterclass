@@ -75,6 +75,23 @@ function reverse(str) {
 reverse("hello");
 ```
 
+## Reverse an Integer
+
+```javascript
+function reverseInt(n) {
+  const num = Math.abs(n);
+  const reversed = num
+    .toString()
+    .split("")
+    .reverse()
+    .join("");
+  return reversed * Math.sign(n);
+}
+reverseInt(123);
+
+module.exports = reverseInt;
+```
+
 ## Two Sum Algorithm (Google Interview ? -- True/False)
 
 ### Brute Force - Nested Loops
@@ -267,11 +284,22 @@ twoDiff([2, 6, 0, 4, 10, 6], 4); => [ [ 6, 2 ], [ 4, 0 ], [ 10, 6 ], [ 6, 2 ] ]
 function isPalindrome(str) {
   const reversed = str
     .split("")
-    .reverse("")
+    .reverse()
     .join("");
   return str === reversed;
 }
-isPalindrome(`Madam I'm Adam`); // true
+isPalindrome(`deed`); // true
+```
+
+### Using every()
+
+```javascript
+function isPalindrome(str) {
+  return str
+    .split("")
+    .every((char, index) => char === str[str.length - index - 1]);
+}
+isPalindrome(`Madam I'm Adam`);
 ```
 
 ### Store in Array
