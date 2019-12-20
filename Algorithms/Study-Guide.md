@@ -88,8 +88,6 @@ function reverseInt(n) {
   return reversed * Math.sign(n);
 }
 reverseInt(123);
-
-module.exports = reverseInt;
 ```
 
 ## Two Sum Algorithm (Google Interview ? -- True/False)
