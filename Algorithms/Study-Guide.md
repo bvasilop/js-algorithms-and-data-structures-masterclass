@@ -22,24 +22,17 @@ reverse("Hello"); // => 'olleh' // O(n) Time Complexity
 ```
 
 ```javascript
-const reverse2 = str
-  .split("")
-  .reverse()
-  .join("");
+const reverse2 = str.split("").reverse().join("");
 reverse2("yipeeee"); // 'eeeepiy' // O(n) Time Complexity
 ```
 
 ```javascript
-const reverse3 = str =>
-  str
-    .split("")
-    .reverse()
-    .join("");
+const reverse3 = (str) => str.split("").reverse().join("");
 reverse3(str); // 'eeeepiy' // O(n) Time Complexity
 ```
 
 ```javascript
-const reverse5 = str => [...str].reverse().join("");
+const reverse5 = (str) => [...str].reverse().join("");
 reverse5("yippeeeee"); //'eeeeeppiy' // O(n) Time Complexity
 ```
 
@@ -80,11 +73,7 @@ reverse("hello");
 ```javascript
 function reverseInt(n) {
   const num = Math.abs(n);
-  const reversed = num
-    .toString()
-    .split("")
-    .reverse()
-    .join("");
+  const reversed = num.toString().split("").reverse().join("");
   return reversed * Math.sign(n);
 }
 reverseInt(123);
@@ -280,10 +269,7 @@ twoDiff([2, 6, 0, 4, 10, 6], 4); => [ [ 6, 2 ], [ 4, 0 ], [ 10, 6 ], [ 6, 2 ] ]
 
 ```javascript
 function isPalindrome(str) {
-  const reversed = str
-    .split("")
-    .reverse()
-    .join("");
+  const reversed = str.split("").reverse().join("");
   return str === reversed;
 }
 isPalindrome(`deed`); // true
@@ -328,14 +314,8 @@ isPalindrome(`Madam I'm Adam`); // True // O(n) Time Complexity
 ### Is Palindrome with Integers
 
 ```javascript
-var isPalindrome = function(nums) {
-  const reverse = parseInt(
-    nums
-      .toString()
-      .split("")
-      .reverse()
-      .join("")
-  );
+var isPalindrome = function (nums) {
+  const reverse = parseInt(nums.toString().split("").reverse().join(""));
   return nums === reverse;
 };
 
@@ -345,20 +325,14 @@ isPalindrome(121); //true
 ### Is Palindrome using `filter()`
 
 ```javascript
-const isPalindrome = str => {
+const isPalindrome = (str) => {
   str = str
     .toLowerCase()
     .split("")
-    .filter(str => str >= "a" && str <= "z")
+    .filter((str) => str >= "a" && str <= "z")
     .join("");
 
-  return (
-    str ===
-    str
-      .split("")
-      .reverse()
-      .join("")
-  );
+  return str === str.split("").reverse().join("");
 };
 isPalindrome(`Madam I'm Adam`);
 ```
@@ -375,7 +349,7 @@ isPalindrome(`Madam I'm Adam`);
 ### Is Palindrome with Integers without using API libraries (faster runtime)
 
 ```javascript
-var isPalindrome = function(x) {
+var isPalindrome = function (x) {
   if (x < 0 || (x % 10 === 0 && x !== 0)) {
     return false;
   }
@@ -399,17 +373,11 @@ isPalindrome("racecar"); // true
 isPalindrome("race Car"); // true
 
 function isPalindrome(word) {
-  // Replace all non-letter chars with "" and change to lowercase
+  // Replace all non-letter chars with '' and change to lowercase
   var lettersOnly = word.toLowerCase().replace(/\s/g, "");
 
   // Compare the string with the reversed version of the string
-  return (
-    lettersOnly ===
-    lettersOnly
-      .split("")
-      .reverse()
-      .join("")
-  );
+  return lettersOnly === lettersOnly.split("").reverse().join("");
 }
 ```
 
@@ -458,14 +426,8 @@ function isAnagram(first, second) {
   var b = second.toLowerCase();
 
   // Sort the strings, and join the resulting array to a string. Compare the results
-  a = a
-    .split("")
-    .sort()
-    .join("");
-  b = b
-    .split("")
-    .sort()
-    .join("");
+  a = a.split("").sort().join("");
+  b = b.split("").sort().join("");
 
   return a === b;
 }
@@ -543,7 +505,7 @@ mostFrequentChar("Hello World"); // 'l' // O(n) Time Complexity
 #### Using for of loop instead of traditional for loop
 
 ```javascript
-const mostFrequentChar = str => {
+const mostFrequentChar = (str) => {
   str = str.toLowerCase().split("");
 
   const map = {};
@@ -564,7 +526,7 @@ mostFrequentChar("Hello World"); // 'l'
 ```javascript
 const arr = [1, 1, 2, 3, 3, 3, 3, 4, 5, 5, 10]; // return [ 3 ]
 
-const mostCommonNum = arr => {
+const mostCommonNum = (arr) => {
   if (arr.length < 1) {
     return null;
   }
@@ -730,7 +692,7 @@ flattened(arr); // => output: [1, 2, 3, 4, 5]
 
 ```javascript
 const arr = [1, 2, [3, 4], [5]];
-const flattened = arr => {
+const flattened = (arr) => {
   return [].concat.apply([], arr);
 };
 flattened(arr); // => output: [1, 2, 3, 4, 5]
@@ -805,10 +767,10 @@ fizzBuzz2(25);
 ## Common Amazon Question About Currying
 
 ```javascript
-let sum = function(a) {
-  return function(b) {
-    return function(c) {
-      return function(d) {
+let sum = function (a) {
+  return function (b) {
+    return function (c) {
+      return function (d) {
         return a + b + c + d;
       };
     };
@@ -818,8 +780,8 @@ sum(1)(2)(3)(4); // 10
 ```
 
 ```javascript
-let sum = function(a) {
-  return function(b) {
+let sum = function (a) {
+  return function (b) {
     if (b) {
       return sum(a + b);
     }
@@ -830,8 +792,8 @@ sum(1)(2)(3)(4)(); // 10
 ```
 
 ```javascript
-let sum = function(a) {
-  return function(b) {
+let sum = function (a) {
+  return function (b) {
     return b ? sum(a + b) : a;
   };
 };
@@ -839,7 +801,7 @@ sum(1)(2)(3)(4)(); // 10
 ```
 
 ```javascript
-let sum = a => b => (b ? sum(a + b) : a);
+let sum = (a) => (b) => (b ? sum(a + b) : a);
 sum(1)(2)(3)(4)(); // 10
 ```
 
@@ -850,7 +812,7 @@ class LinkedList {
   constructor(value) {
     this.head = {
       value: value,
-      next: null
+      next: null,
     };
     this.tail = this.head;
     this.length = 1;
@@ -858,7 +820,7 @@ class LinkedList {
   append(value) {
     const newNode = {
       value: value,
-      next: null
+      next: null,
     };
     console.log(newNode);
     this.tail.next = newNode;
@@ -869,7 +831,7 @@ class LinkedList {
   prepend(value) {
     const newNode = {
       value: value,
-      next: null
+      next: null,
     };
     newNode.next = this.head;
     this.head = newNode;
@@ -894,7 +856,7 @@ class LinkedList {
 
     const newNode = {
       value: value,
-      next: null
+      next: null,
     };
     const leader = this.traverseToIndex(index - 1);
     const holdingPointer = leader.next;
@@ -969,7 +931,7 @@ class DoublyLinkedList {
     this.head = {
       value: value,
       next: null,
-      prev: null // main difference with singly linked list is previous property
+      prev: null, // main difference with singly linked list is previous property
     };
     this.tail = this.head;
     this.length = 1;
@@ -978,7 +940,7 @@ class DoublyLinkedList {
     const newNode = {
       value: value,
       next: null,
-      prev: null // main difference with singly linked list is previous property
+      prev: null, // main difference with singly linked list is previous property
     };
     console.log(newNode);
     newNode.prev = this.tail; // add a prev property to equal whatever's at the end of the original list
@@ -991,7 +953,7 @@ class DoublyLinkedList {
     const newNode = {
       value: value,
       next: null,
-      prev: null // main difference with singly linked list is previous property
+      prev: null, // main difference with singly linked list is previous property
     };
     newNode.next = this.head;
     this.head.prev = newNode; // add a prev property to equal whatever's at the end of the original
@@ -1017,7 +979,7 @@ class DoublyLinkedList {
     const newNode = {
       value: value,
       next: null,
-      prev: null // main difference with singly linked list is previous property
+      prev: null, // main difference with singly linked list is previous property
     };
     const leader = this.traverseToIndex(index - 1);
     const follower = leader.next; // must grab reference to leader
